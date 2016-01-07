@@ -1,0 +1,502 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3554649CE2FCB79134885826 /* libPods-MFCampaignEngagement.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2EBDCB5D5B04BF527D66467 /* libPods-MFCampaignEngagement.a */; };
+		8C9BC1D91C2FA9580034849F /* MFAlertWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BC1D81C2FA9580034849F /* MFAlertWindow.m */; };
+		8C9CBB4A1C317FA10015D747 /* ChildhoodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBB491C317FA10015D747 /* ChildhoodController.m */; };
+		CE30591C1C322A5200ABD92A /* button_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE30591B1C322A5200ABD92A /* button_setting@2x.png */; };
+		CE3059271C33E7C400ABD92A /* jenior.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3059261C33E7C400ABD92A /* jenior.png */; };
+		CE3059291C33E8FF00ABD92A /* senior.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3059281C33E8FF00ABD92A /* senior.png */; };
+		CE30592B1C33E95600ABD92A /* child.png in Resources */ = {isa = PBXBuildFile; fileRef = CE30592A1C33E95600ABD92A /* child.png */; };
+		CE903F1B1C082E0D00730C7A /* MainStoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE903F1A1C082E0D00730C7A /* MainStoryView.m */; };
+		CED48B1C1C0C02770050B9FD /* UIView+MFViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = CED48B1B1C0C02770050B9FD /* UIView+MFViewTools.m */; };
+		CED48B301C0EE36B0050B9FD /* MainBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CED48B2F1C0EE36B0050B9FD /* MainBackground.png */; };
+		CEFE68241C0300B6003103B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFE68231C0300B6003103B2 /* main.m */; };
+		CEFE68271C0300B6003103B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFE68261C0300B6003103B2 /* AppDelegate.m */; };
+		CEFE682A1C0300B6003103B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFE68291C0300B6003103B2 /* ViewController.m */; };
+		CEFE682D1C0300B6003103B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFE682B1C0300B6003103B2 /* Main.storyboard */; };
+		CEFE682F1C0300B6003103B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFE682E1C0300B6003103B2 /* Assets.xcassets */; };
+		CEFE68321C0300B6003103B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFE68301C0300B6003103B2 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5FBD066472EEE799CA687813 /* Pods-MFCampaignEngagement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MFCampaignEngagement.release.xcconfig"; path = "Pods/Target Support Files/Pods-MFCampaignEngagement/Pods-MFCampaignEngagement.release.xcconfig"; sourceTree = "<group>"; };
+		8C9BC1D71C2FA9580034849F /* MFAlertWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAlertWindow.h; sourceTree = "<group>"; };
+		8C9BC1D81C2FA9580034849F /* MFAlertWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAlertWindow.m; sourceTree = "<group>"; };
+		8C9CBB481C317FA10015D747 /* ChildhoodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildhoodController.h; sourceTree = "<group>"; };
+		8C9CBB491C317FA10015D747 /* ChildhoodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildhoodController.m; sourceTree = "<group>"; };
+		8CCF8AAC1C0C98A7003C1334 /* MFMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFMacro.h; sourceTree = "<group>"; };
+		C262448DF578C297F1E25056 /* Pods-MFCampaignEngagement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MFCampaignEngagement.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MFCampaignEngagement/Pods-MFCampaignEngagement.debug.xcconfig"; sourceTree = "<group>"; };
+		CE30591B1C322A5200ABD92A /* button_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_setting@2x.png"; sourceTree = "<group>"; };
+		CE3059261C33E7C400ABD92A /* jenior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jenior.png; sourceTree = "<group>"; };
+		CE3059281C33E8FF00ABD92A /* senior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = senior.png; sourceTree = "<group>"; };
+		CE30592A1C33E95600ABD92A /* child.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = child.png; sourceTree = "<group>"; };
+		CE903F191C082E0D00730C7A /* MainStoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainStoryView.h; sourceTree = "<group>"; };
+		CE903F1A1C082E0D00730C7A /* MainStoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainStoryView.m; sourceTree = "<group>"; };
+		CED48B1A1C0C02770050B9FD /* UIView+MFViewTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MFViewTools.h"; sourceTree = "<group>"; };
+		CED48B1B1C0C02770050B9FD /* UIView+MFViewTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MFViewTools.m"; sourceTree = "<group>"; };
+		CED48B2F1C0EE36B0050B9FD /* MainBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainBackground.png; sourceTree = "<group>"; };
+		CEFE681F1C0300B6003103B2 /* MFCampaignEngagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MFCampaignEngagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEFE68231C0300B6003103B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CEFE68251C0300B6003103B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CEFE68261C0300B6003103B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CEFE68281C0300B6003103B2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CEFE68291C0300B6003103B2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CEFE682C1C0300B6003103B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CEFE682E1C0300B6003103B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEFE68311C0300B6003103B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CEFE68331C0300B6003103B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2EBDCB5D5B04BF527D66467 /* libPods-MFCampaignEngagement.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MFCampaignEngagement.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEFE681C1C0300B6003103B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3554649CE2FCB79134885826 /* libPods-MFCampaignEngagement.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		107A17135F717B0A3A5BBA47 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C262448DF578C297F1E25056 /* Pods-MFCampaignEngagement.debug.xcconfig */,
+				5FBD066472EEE799CA687813 /* Pods-MFCampaignEngagement.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5C75E8C427F830555D9EB755 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2EBDCB5D5B04BF527D66467 /* libPods-MFCampaignEngagement.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C9BC1D61C2FA8B90034849F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8C9BC1D71C2FA9580034849F /* MFAlertWindow.h */,
+				8C9BC1D81C2FA9580034849F /* MFAlertWindow.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CE903F171C082DBF00730C7A /* ViewModles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModles;
+			sourceTree = "<group>";
+		};
+		CE903F181C082DBF00730C7A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE903F191C082E0D00730C7A /* MainStoryView.h */,
+				CE903F1A1C082E0D00730C7A /* MainStoryView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CED48B191C0BFD9D0050B9FD /* MFCategories */ = {
+			isa = PBXGroup;
+			children = (
+				CED48B1A1C0C02770050B9FD /* UIView+MFViewTools.h */,
+				CED48B1B1C0C02770050B9FD /* UIView+MFViewTools.m */,
+			);
+			path = MFCategories;
+			sourceTree = "<group>";
+		};
+		CED48B2E1C0EE36B0050B9FD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CE30592A1C33E95600ABD92A /* child.png */,
+				CE3059281C33E8FF00ABD92A /* senior.png */,
+				CE3059261C33E7C400ABD92A /* jenior.png */,
+				CED48B2F1C0EE36B0050B9FD /* MainBackground.png */,
+				CE30591B1C322A5200ABD92A /* button_setting@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		CEFE68161C0300B6003103B2 = {
+			isa = PBXGroup;
+			children = (
+				CEFE68211C0300B6003103B2 /* MFCampaignEngagement */,
+				CEFE68201C0300B6003103B2 /* Products */,
+				107A17135F717B0A3A5BBA47 /* Pods */,
+				5C75E8C427F830555D9EB755 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CEFE68201C0300B6003103B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEFE681F1C0300B6003103B2 /* MFCampaignEngagement.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEFE68211C0300B6003103B2 /* MFCampaignEngagement */ = {
+			isa = PBXGroup;
+			children = (
+				CEFE68251C0300B6003103B2 /* AppDelegate.h */,
+				CEFE68261C0300B6003103B2 /* AppDelegate.m */,
+				CEFE68281C0300B6003103B2 /* ViewController.h */,
+				CEFE68291C0300B6003103B2 /* ViewController.m */,
+				8C9CBB481C317FA10015D747 /* ChildhoodController.h */,
+				8C9CBB491C317FA10015D747 /* ChildhoodController.m */,
+				8CCF8AAC1C0C98A7003C1334 /* MFMacro.h */,
+				8C9BC1D61C2FA8B90034849F /* Utilities */,
+				CED48B2E1C0EE36B0050B9FD /* Images */,
+				CED48B191C0BFD9D0050B9FD /* MFCategories */,
+				CE903F171C082DBF00730C7A /* ViewModles */,
+				CE903F181C082DBF00730C7A /* Views */,
+				CEFE682B1C0300B6003103B2 /* Main.storyboard */,
+				CEFE682E1C0300B6003103B2 /* Assets.xcassets */,
+				CEFE68301C0300B6003103B2 /* LaunchScreen.storyboard */,
+				CEFE68331C0300B6003103B2 /* Info.plist */,
+				CEFE68221C0300B6003103B2 /* Supporting Files */,
+			);
+			path = MFCampaignEngagement;
+			sourceTree = "<group>";
+		};
+		CEFE68221C0300B6003103B2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEFE68231C0300B6003103B2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEFE681E1C0300B6003103B2 /* MFCampaignEngagement */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEFE68361C0300B6003103B2 /* Build configuration list for PBXNativeTarget "MFCampaignEngagement" */;
+			buildPhases = (
+				8D73F54595B0ECD61DE7A140 /* Check Pods Manifest.lock */,
+				CEFE681B1C0300B6003103B2 /* Sources */,
+				CEFE681C1C0300B6003103B2 /* Frameworks */,
+				CEFE681D1C0300B6003103B2 /* Resources */,
+				718E0A328A78BE6DEAEF708D /* Embed Pods Frameworks */,
+				1F43A9B4796786B4F9B78EBA /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MFCampaignEngagement;
+			productName = MFCampaignEngagement;
+			productReference = CEFE681F1C0300B6003103B2 /* MFCampaignEngagement.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEFE68171C0300B6003103B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = MingFung;
+				TargetAttributes = {
+					CEFE681E1C0300B6003103B2 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = V26CYTSGYR;
+					};
+				};
+			};
+			buildConfigurationList = CEFE681A1C0300B6003103B2 /* Build configuration list for PBXProject "MFCampaignEngagement" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEFE68161C0300B6003103B2;
+			productRefGroup = CEFE68201C0300B6003103B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEFE681E1C0300B6003103B2 /* MFCampaignEngagement */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEFE681D1C0300B6003103B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE30592B1C33E95600ABD92A /* child.png in Resources */,
+				CEFE68321C0300B6003103B2 /* LaunchScreen.storyboard in Resources */,
+				CE3059291C33E8FF00ABD92A /* senior.png in Resources */,
+				CEFE682F1C0300B6003103B2 /* Assets.xcassets in Resources */,
+				CED48B301C0EE36B0050B9FD /* MainBackground.png in Resources */,
+				CE30591C1C322A5200ABD92A /* button_setting@2x.png in Resources */,
+				CE3059271C33E7C400ABD92A /* jenior.png in Resources */,
+				CEFE682D1C0300B6003103B2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F43A9B4796786B4F9B78EBA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MFCampaignEngagement/Pods-MFCampaignEngagement-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		718E0A328A78BE6DEAEF708D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MFCampaignEngagement/Pods-MFCampaignEngagement-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D73F54595B0ECD61DE7A140 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEFE681B1C0300B6003103B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE903F1B1C082E0D00730C7A /* MainStoryView.m in Sources */,
+				8C9BC1D91C2FA9580034849F /* MFAlertWindow.m in Sources */,
+				CEFE682A1C0300B6003103B2 /* ViewController.m in Sources */,
+				8C9CBB4A1C317FA10015D747 /* ChildhoodController.m in Sources */,
+				CEFE68271C0300B6003103B2 /* AppDelegate.m in Sources */,
+				CED48B1C1C0C02770050B9FD /* UIView+MFViewTools.m in Sources */,
+				CEFE68241C0300B6003103B2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CEFE682B1C0300B6003103B2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEFE682C1C0300B6003103B2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CEFE68301C0300B6003103B2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEFE68311C0300B6003103B2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CEFE68341C0300B6003103B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEFE68351C0300B6003103B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEFE68371C0300B6003103B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C262448DF578C297F1E25056 /* Pods-MFCampaignEngagement.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFDownloadRequestOperation\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/YTKNetwork\"",
+				);
+				INFOPLIST_FILE = MFCampaignEngagement/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MF.MFCampaignEngagement;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2070f7d4-6f27-4ebf-86e4-b9c829abe16b";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/** \"$(SRCROOT)/MFCampaignEngagement/MFMacro.h\"";
+			};
+			name = Debug;
+		};
+		CEFE68381C0300B6003103B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FBD066472EEE799CA687813 /* Pods-MFCampaignEngagement.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFDownloadRequestOperation\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/YTKNetwork\"",
+				);
+				INFOPLIST_FILE = MFCampaignEngagement/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MF.MFCampaignEngagement;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2070f7d4-6f27-4ebf-86e4-b9c829abe16b";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/** \"$(SRCROOT)/MFCampaignEngagement/MFMacro.h\"";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEFE681A1C0300B6003103B2 /* Build configuration list for PBXProject "MFCampaignEngagement" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEFE68341C0300B6003103B2 /* Debug */,
+				CEFE68351C0300B6003103B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEFE68361C0300B6003103B2 /* Build configuration list for PBXNativeTarget "MFCampaignEngagement" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEFE68371C0300B6003103B2 /* Debug */,
+				CEFE68381C0300B6003103B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEFE68171C0300B6003103B2 /* Project object */;
+}
