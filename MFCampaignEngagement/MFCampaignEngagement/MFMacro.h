@@ -28,4 +28,6 @@
 #pragma mark Size
 #define SCREEN_WIDTH        [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT       [UIScreen mainScreen].bounds.size.height
+#define NAVIGATION_BAR_ITEM_WIDTH    SCREEN_WIDTH/7
+#define NAVIGATION_BAR_ITEM_EDGE     SCREEN_WIDTH/30
 #endif /* MFMacro_h */

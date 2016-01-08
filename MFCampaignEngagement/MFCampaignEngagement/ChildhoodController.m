@@ -22,9 +22,12 @@
     //使navigation不遮挡view，且view的大小不算上navigation面积（xib没有设置项）
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"button_setting"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(itemPressed:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"little_icon_waitter"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(itemPressed:)];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"button_setting"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(itemPressed:)];
+    UIBarButtonItem *musicButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"little_icon_musicalNote"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(itemPressed:)];
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"little_icon_butterfly"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(itemPressed:)];
+    
+    self.navigationItem.rightBarButtonItems = @[shareButton,musicButton];
 }
 
 #pragma mark - Life
