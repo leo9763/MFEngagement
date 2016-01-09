@@ -49,14 +49,15 @@ typedef NS_ENUM(NSUInteger, LifeStage) {
     self.youRunSpeedRatio = (SCREEN_WIDTH/2 + MF_YOU_MODEL_WIDTH) / SCREEN_WIDTH;
     self.stage = LifeStageChild;
     
-    //使navigation不遮挡view，且view的大小不算上navigation面积（xib没有设置项）
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     //设置navigationBar为半透明(模糊)效果
     [self.navigationController.navigationBar setTranslucent:YES];
     
-    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"backgroud_transparentNavigationbar"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    
     
     self.settingButton.frame = CGRectMake(NAVIGATION_BAR_ITEM_EDGE, 0, NAVIGATION_BAR_ITEM_WIDTH, NAVIGATION_BAR_ITEM_WIDTH);
     self.shareButton.frame = CGRectMake(SCREEN_WIDTH - 2*NAVIGATION_BAR_ITEM_EDGE - NAVIGATION_BAR_ITEM_WIDTH, 0, NAVIGATION_BAR_ITEM_WIDTH, NAVIGATION_BAR_ITEM_WIDTH);
@@ -111,33 +112,39 @@ typedef NS_ENUM(NSUInteger, LifeStage) {
     
     [littleCloud1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(weakSelf.contentView).with.offset(MF_BIG_CLOUD_WIDTH/7);
-        make.top.equalTo(weakSelf.contentView).with.offset(MF_BIG_CLOUD_HEIGTH);
+        make.top.equalTo(weakSelf.contentView).with.offset(NAVIGATION_BAR_HEIGHT + MF_BIG_CLOUD_HEIGTH/2);
         make.size.mas_equalTo(CGSizeMake(0.6 * MF_BIG_CLOUD_WIDTH, 0.6 * MF_BIG_CLOUD_HEIGTH));
     }];
     
     [bigCloud mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(weakSelf.contentView).with.offset(SCREEN_WIDTH - MF_BIG_CLOUD_WIDTH/2);
-        make.top.equalTo(weakSelf.contentView).with.offset(MF_BIG_CLOUD_HEIGTH/6);
+        make.top.equalTo(weakSelf.contentView).with.offset(NAVIGATION_BAR_HEIGHT + MF_BIG_CLOUD_HEIGTH/9);
         make.size.mas_equalTo(CGSizeMake(MF_BIG_CLOUD_WIDTH, MF_BIG_CLOUD_HEIGTH));
     }];
     
     [middleCloud mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(weakSelf.contentView).with.offset(2 * SCREEN_WIDTH - 0.7 * MF_BIG_CLOUD_WIDTH);
-        make.top.equalTo(weakSelf.contentView).with.offset(MF_BIG_CLOUD_HEIGTH/4.5);
+        make.leading.equalTo(weakSelf.contentView).with.offset(2 * SCREEN_WIDTH);
+        make.top.equalTo(weakSelf.contentView).with.offset(NAVIGATION_BAR_HEIGHT + MF_BIG_CLOUD_HEIGTH/4.5);
         make.size.mas_equalTo(CGSizeMake(0.7 * MF_BIG_CLOUD_WIDTH, 0.7 * MF_BIG_CLOUD_HEIGTH));
     }];
     
     [littleCloud2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(weakSelf.contentView).with.offset(2 * SCREEN_WIDTH + MF_BIG_CLOUD_WIDTH/4);
-        make.top.equalTo(weakSelf.contentView).with.offset(MF_BIG_CLOUD_HEIGTH/4);
+        make.top.equalTo(weakSelf.contentView).with.offset(NAVIGATION_BAR_HEIGHT + MF_BIG_CLOUD_HEIGTH/4);
         make.size.mas_equalTo(CGSizeMake(0.4 * MF_BIG_CLOUD_WIDTH, 0.4 * MF_BIG_CLOUD_HEIGTH));
     }];
     
     [sun mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(weakSelf.contentView).with.offset(SCREEN_WIDTH);
-        make.top.equalTo(weakSelf.contentView).with.offset(MF_BIG_CLOUD_HEIGTH/6);
+        make.top.equalTo(weakSelf.contentView).with.offset(NAVIGATION_BAR_HEIGHT + MF_BIG_CLOUD_HEIGTH/9);
         make.size.mas_equalTo(CGSizeMake(0.9 * MF_BIG_CLOUD_HEIGTH, 0.9 * MF_BIG_CLOUD_HEIGTH));
     }];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -172,7 +179,9 @@ typedef NS_ENUM(NSUInteger, LifeStage) {
             make.leading.equalTo(weakSelf.contentView).with.offset((SCREEN_WIDTH - MF_BIG_CLOUD_WIDTH/2) - offsetX * 0.5);
         }];
         
-        
+        [middleCloud mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(weakSelf.contentView).with.offset((2 * SCREEN_WIDTH) -offsetX * 0.4 );
+        }];
         
     } else if (offsetX >= SCREEN_WIDTH && offsetX < SCREEN_WIDTH * 2) {
         
@@ -184,6 +193,10 @@ typedef NS_ENUM(NSUInteger, LifeStage) {
         
         [youModel mas_updateConstraints:^(MASConstraintMaker *make) {
             make.leading.equalTo(weakSelf.contentView).with.offset(offsetX + SCREEN_WIDTH * 0.5);
+        }];
+        
+        [middleCloud mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(weakSelf.contentView).with.offset((2 * SCREEN_WIDTH) -offsetX * 0.4 );
         }];
         
     } else {

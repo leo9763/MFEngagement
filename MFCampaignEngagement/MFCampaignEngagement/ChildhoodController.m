@@ -22,12 +22,11 @@
     //使navigation不遮挡view，且view的大小不算上navigation面积（xib没有设置项）
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"little_icon_waitter"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(itemPressed:)];
-    
-    UIBarButtonItem *musicButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"little_icon_musicalNote"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(itemPressed:)];
-    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"little_icon_butterfly"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(itemPressed:)];
-    
-    self.navigationItem.rightBarButtonItems = @[shareButton,musicButton];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+
+    //设置navigationBar为半透明(模糊)效果
+    [self.navigationController.navigationBar setTranslucent:YES];
 }
 
 #pragma mark - Life
