@@ -66,6 +66,10 @@
 		CE2D4DBF1C3F9EA300DBBF79 /* scene_middleCloud.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2D4DBA1C3F9EA300DBBF79 /* scene_middleCloud.png */; };
 		CE2D4DC01C3F9EA300DBBF79 /* scene_sun.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2D4DBB1C3F9EA300DBBF79 /* scene_sun.png */; };
 		CE2D4DC31C4111A200DBBF79 /* backgroud_transparentNavigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2D4DC21C4111A200DBBF79 /* backgroud_transparentNavigationbar.png */; };
+		CE2D4DC71C43B07900DBBF79 /* MainScreenScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2D4DC61C43B07900DBBF79 /* MainScreenScrollView.m */; };
+		CE2D4DD31C44958100DBBF79 /* RomanticMusicHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2D4DD21C44958100DBBF79 /* RomanticMusicHelper.m */; };
+		CE2D4DD61C44A33100DBBF79 /* DirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2D4DD51C44A33100DBBF79 /* DirectoryWatcher.m */; };
+		CE2D4DD81C44E5AA00DBBF79 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2D4DD71C44E5AA00DBBF79 /* AVFoundation.framework */; };
 		CE30591C1C322A5200ABD92A /* button_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE30591B1C322A5200ABD92A /* button_setting@2x.png */; };
 		CE3059271C33E7C400ABD92A /* jenior.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3059261C33E7C400ABD92A /* jenior.png */; };
 		CE3059291C33E8FF00ABD92A /* senior.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3059281C33E8FF00ABD92A /* senior.png */; };
@@ -145,6 +149,13 @@
 		CE2D4DBA1C3F9EA300DBBF79 /* scene_middleCloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_middleCloud.png; sourceTree = "<group>"; };
 		CE2D4DBB1C3F9EA300DBBF79 /* scene_sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_sun.png; sourceTree = "<group>"; };
 		CE2D4DC21C4111A200DBBF79 /* backgroud_transparentNavigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroud_transparentNavigationbar.png; sourceTree = "<group>"; };
+		CE2D4DC51C43B07900DBBF79 /* MainScreenScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenScrollView.h; sourceTree = "<group>"; };
+		CE2D4DC61C43B07900DBBF79 /* MainScreenScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreenScrollView.m; sourceTree = "<group>"; };
+		CE2D4DD11C44958100DBBF79 /* RomanticMusicHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RomanticMusicHelper.h; sourceTree = "<group>"; };
+		CE2D4DD21C44958100DBBF79 /* RomanticMusicHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RomanticMusicHelper.m; sourceTree = "<group>"; };
+		CE2D4DD41C44A33100DBBF79 /* DirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryWatcher.h; sourceTree = "<group>"; };
+		CE2D4DD51C44A33100DBBF79 /* DirectoryWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryWatcher.m; sourceTree = "<group>"; };
+		CE2D4DD71C44E5AA00DBBF79 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CE30591B1C322A5200ABD92A /* button_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_setting@2x.png"; sourceTree = "<group>"; };
 		CE3059261C33E7C400ABD92A /* jenior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jenior.png; sourceTree = "<group>"; };
 		CE3059281C33E8FF00ABD92A /* senior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = senior.png; sourceTree = "<group>"; };
@@ -172,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2D4DD81C44E5AA00DBBF79 /* AVFoundation.framework in Frameworks */,
 				3554649CE2FCB79134885826 /* libPods-MFCampaignEngagement.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +203,7 @@
 		5C75E8C427F830555D9EB755 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE2D4DD71C44E5AA00DBBF79 /* AVFoundation.framework */,
 				F2EBDCB5D5B04BF527D66467 /* libPods-MFCampaignEngagement.a */,
 			);
 			name = Frameworks;
@@ -355,8 +368,14 @@
 				CEFE68261C0300B6003103B2 /* AppDelegate.m */,
 				CEFE68281C0300B6003103B2 /* ViewController.h */,
 				CEFE68291C0300B6003103B2 /* ViewController.m */,
+				CE2D4DC51C43B07900DBBF79 /* MainScreenScrollView.h */,
+				CE2D4DC61C43B07900DBBF79 /* MainScreenScrollView.m */,
 				8C9CBB481C317FA10015D747 /* ChildhoodController.h */,
 				8C9CBB491C317FA10015D747 /* ChildhoodController.m */,
+				CE2D4DD11C44958100DBBF79 /* RomanticMusicHelper.h */,
+				CE2D4DD21C44958100DBBF79 /* RomanticMusicHelper.m */,
+				CE2D4DD41C44A33100DBBF79 /* DirectoryWatcher.h */,
+				CE2D4DD51C44A33100DBBF79 /* DirectoryWatcher.m */,
 				8CCF8AAC1C0C98A7003C1334 /* MFMacro.h */,
 				8C9BC1D61C2FA8B90034849F /* Utilities */,
 				CED48B2E1C0EE36B0050B9FD /* Images */,
@@ -563,12 +582,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2D4DC71C43B07900DBBF79 /* MainScreenScrollView.m in Sources */,
+				CE2D4DD31C44958100DBBF79 /* RomanticMusicHelper.m in Sources */,
 				CE903F1B1C082E0D00730C7A /* MainStoryView.m in Sources */,
 				8C9BC1D91C2FA9580034849F /* MFAlertWindow.m in Sources */,
 				CEFE682A1C0300B6003103B2 /* ViewController.m in Sources */,
 				8C9CBB4A1C317FA10015D747 /* ChildhoodController.m in Sources */,
 				CEFE68271C0300B6003103B2 /* AppDelegate.m in Sources */,
 				CED48B1C1C0C02770050B9FD /* UIView+MFViewTools.m in Sources */,
+				CE2D4DD61C44A33100DBBF79 /* DirectoryWatcher.m in Sources */,
 				CEFE68241C0300B6003103B2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -699,7 +721,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MF.MFCampaignEngagement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2070f7d4-6f27-4ebf-86e4-b9c829abe16b";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/** \"$(SRCROOT)/MFCampaignEngagement/MFMacro.h\"";
 			};
 			name = Debug;
@@ -726,7 +748,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MF.MFCampaignEngagement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2070f7d4-6f27-4ebf-86e4-b9c829abe16b";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/** \"$(SRCROOT)/MFCampaignEngagement/MFMacro.h\"";
 			};
 			name = Release;
