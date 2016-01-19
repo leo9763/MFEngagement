@@ -17,7 +17,7 @@ typedef NS_ENUM(NSUInteger, LifeStage) {
 
 @class  MainScreenScrollView;
 
-@protocol MainScreenProtocol <NSObject>
+@protocol MainScreenProtocol <NSObject,UIScrollViewDelegate>
 
 @optional
 - (void)meDidClick:(MainScreenScrollView *)mainScreen;

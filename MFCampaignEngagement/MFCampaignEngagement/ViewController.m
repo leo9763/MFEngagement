@@ -17,10 +17,11 @@
 
 
 
-@interface ViewController ()
+@interface ViewController () <MainScreenProtocol>
 
 @property (strong, nonatomic) UIButton *settingButton,*shareButton,*musicButton;
 @property (strong, nonatomic) MainScreenScrollView *mainStoryScrollView;
+@property (nonatomic, assign) BOOL isPlaying;
 
 @end
 
@@ -35,6 +36,8 @@
     
     self.extendedLayoutIncludesOpaqueBars = NO;
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.isPlaying = YES;
+    [[RomanticMusicHelper shareMusicHelper] play];
     
     //设置navigationBar为半透明(模糊)效果
     [self.navigationController.navigationBar setTranslucent:YES];
@@ -82,6 +85,18 @@
     [mainStoryScrollView updateScreenWithOffset:scrollView.contentOffset];
 }
 
+- (void)meDidClick:(MainScreenScrollView *)mainScreen
+{
+    ChildhoodController *childController = [[ChildhoodController alloc] init];
+    [self.navigationController pushViewController:childController animated:YES];
+}
+
+- (void)youDidClick:(MainScreenScrollView *)mainScreen
+{
+    ChildhoodController *childController = [[ChildhoodController alloc] init];
+    [self.navigationController pushViewController:childController animated:YES];
+}
+
 #pragma mark - Response
 - (void)buttonPressed:(UIButton *)button
 {
@@ -92,7 +107,13 @@
     } else if (button == musicButton) {
         DLog(@"点击了🎵");
         
-        [[RomanticMusicHelper shareMusicHelper] play];
+        if (_isPlaying) {
+            [[RomanticMusicHelper shareMusicHelper] pause];
+        } else {
+            [[RomanticMusicHelper shareMusicHelper] play];
+        }
+        
+        _isPlaying = !_isPlaying;
     }
 }
 
@@ -101,6 +122,7 @@
 {
     if (!mainStoryScrollView) {
         mainStoryScrollView = [[MainScreenScrollView alloc] init];
+        mainStoryScrollView.mainScreenDelegate = self;
         mainStoryScrollView.delegate = self;
         mainStoryScrollView.pagingEnabled = YES;
     }

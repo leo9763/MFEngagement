@@ -10,12 +10,13 @@
 #import "Masonry.h"
 #import "MFMacro.h"
 
-@interface ChildhoodController ()
+@interface ChildhoodController ()  <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (nonatomic, strong) UIButton *backButton;
+@property (nonatomic, strong) UIImagePickerController *imagePickerController;
 @end
 
 @implementation ChildhoodController
-@synthesize backButton;
+@synthesize backButton,imagePickerController;
 
 - (void)setupView
 {
@@ -27,6 +28,8 @@
 
     //设置navigationBar为半透明(模糊)效果
     [self.navigationController.navigationBar setTranslucent:YES];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addImage)];
 }
 
 #pragma mark - Life
@@ -69,6 +72,26 @@
     }
 }
 
+- (void)addImage
+{
+    [self presentViewController:self.imagePickerController animated:YES completion:^{
+        
+    }];
+}
+
+#pragma mark - Delegate Methods
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    if (picker == self.imagePickerController) {
+        UIImage *originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+        UIImageWriteToSavedPhotosAlbum(originalImage, self, @selector(imagePickerController:didFinishPickingMediaWithInfo:), nil);
+    }
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    [self.imagePickerController dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
 #pragma mark - Getters & Setters
 - (void)setBackButton:(UIButton *)aBackButton
 {
@@ -84,6 +107,17 @@
         [backButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
     }
     return backButton;
+}
+
+- (UIImagePickerController *)imagePickerController
+{
+    if (!imagePickerController) {
+        imagePickerController = [[UIImagePickerController alloc] init];
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        imagePickerController.allowsEditing = YES;
+        imagePickerController.delegate = self;        
+    }
+    return imagePickerController;
 }
 
 @end

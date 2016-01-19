@@ -11,9 +11,12 @@
 @interface RomanticMusicHelper : NSObject
 
 @property (nonatomic, strong) NSMutableDictionary *musicsList;
+@property (nonatomic, assign) NSInteger currentTrack;
+@property (nonatomic, assign) BOOL isPlaying;
 
 + (RomanticMusicHelper *)shareMusicHelper;
 - (void)play;
+- (void)pause;
 - (void)resume;
 - (void)stop;
 - (void)showMusicsList;

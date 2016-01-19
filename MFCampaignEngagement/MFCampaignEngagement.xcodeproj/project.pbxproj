@@ -74,6 +74,10 @@
 		CE3059271C33E7C400ABD92A /* jenior.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3059261C33E7C400ABD92A /* jenior.png */; };
 		CE3059291C33E8FF00ABD92A /* senior.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3059281C33E8FF00ABD92A /* senior.png */; };
 		CE30592B1C33E95600ABD92A /* child.png in Resources */ = {isa = PBXBuildFile; fileRef = CE30592A1C33E95600ABD92A /* child.png */; };
+		CE8140361C4C900500729368 /* Geu Dae Wa Na.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE8140321C4C900500729368 /* Geu Dae Wa Na.mp3 */; };
+		CE8140371C4C900500729368 /* Moonlight Shadow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE8140331C4C900500729368 /* Moonlight Shadow.mp3 */; };
+		CE8140381C4C900500729368 /* Na Ppeun Yeo Ja Ya .mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE8140341C4C900500729368 /* Na Ppeun Yeo Ja Ya .mp3 */; };
+		CE8140391C4C900500729368 /* 爱你.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE8140351C4C900500729368 /* 爱你.mp3 */; };
 		CE903F1B1C082E0D00730C7A /* MainStoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE903F1A1C082E0D00730C7A /* MainStoryView.m */; };
 		CED48B1C1C0C02770050B9FD /* UIView+MFViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = CED48B1B1C0C02770050B9FD /* UIView+MFViewTools.m */; };
 		CED48B301C0EE36B0050B9FD /* MainBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CED48B2F1C0EE36B0050B9FD /* MainBackground.png */; };
@@ -160,6 +164,10 @@
 		CE3059261C33E7C400ABD92A /* jenior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jenior.png; sourceTree = "<group>"; };
 		CE3059281C33E8FF00ABD92A /* senior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = senior.png; sourceTree = "<group>"; };
 		CE30592A1C33E95600ABD92A /* child.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = child.png; sourceTree = "<group>"; };
+		CE8140321C4C900500729368 /* Geu Dae Wa Na.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Geu Dae Wa Na.mp3"; sourceTree = "<group>"; };
+		CE8140331C4C900500729368 /* Moonlight Shadow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Moonlight Shadow.mp3"; sourceTree = "<group>"; };
+		CE8140341C4C900500729368 /* Na Ppeun Yeo Ja Ya .mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Na Ppeun Yeo Ja Ya .mp3"; sourceTree = "<group>"; };
+		CE8140351C4C900500729368 /* 爱你.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "爱你.mp3"; sourceTree = "<group>"; };
 		CE903F191C082E0D00730C7A /* MainStoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainStoryView.h; sourceTree = "<group>"; };
 		CE903F1A1C082E0D00730C7A /* MainStoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainStoryView.m; sourceTree = "<group>"; };
 		CED48B1A1C0C02770050B9FD /* UIView+MFViewTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MFViewTools.h"; sourceTree = "<group>"; };
@@ -303,6 +311,17 @@
 			path = background;
 			sourceTree = "<group>";
 		};
+		CE8140311C4C900500729368 /* Musics */ = {
+			isa = PBXGroup;
+			children = (
+				CE8140321C4C900500729368 /* Geu Dae Wa Na.mp3 */,
+				CE8140331C4C900500729368 /* Moonlight Shadow.mp3 */,
+				CE8140341C4C900500729368 /* Na Ppeun Yeo Ja Ya .mp3 */,
+				CE8140351C4C900500729368 /* 爱你.mp3 */,
+			);
+			path = Musics;
+			sourceTree = "<group>";
+		};
 		CE903F171C082DBF00730C7A /* ViewModles */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,7 +397,6 @@
 				CE2D4DD51C44A33100DBBF79 /* DirectoryWatcher.m */,
 				8CCF8AAC1C0C98A7003C1334 /* MFMacro.h */,
 				8C9BC1D61C2FA8B90034849F /* Utilities */,
-				CED48B2E1C0EE36B0050B9FD /* Images */,
 				CED48B191C0BFD9D0050B9FD /* MFCategories */,
 				CE903F171C082DBF00730C7A /* ViewModles */,
 				CE903F181C082DBF00730C7A /* Views */,
@@ -394,6 +412,8 @@
 		CEFE68221C0300B6003103B2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CE8140311C4C900500729368 /* Musics */,
+				CED48B2E1C0EE36B0050B9FD /* Images */,
 				CEFE68231C0300B6003103B2 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -468,11 +488,13 @@
 				CE2D4D9B1C3F482100DBBF79 /* little_icon_gift.png in Resources */,
 				CE2D4DAE1C3F482100DBBF79 /* little_icon_vedio.png in Resources */,
 				CE2D4DA91C3F482100DBBF79 /* little_icon_ringBox.png in Resources */,
+				CE8140381C4C900500729368 /* Na Ppeun Yeo Ja Ya .mp3 in Resources */,
 				CE2D4DB31C3F482100DBBF79 /* little_icon_weddingOutfit.png in Resources */,
 				CE2D4DAA1C3F482100DBBF79 /* little_icon_rose.png in Resources */,
 				CE2D4D8F1C3F482100DBBF79 /* little_icon_champagene.png in Resources */,
 				CE2D4D9E1C3F482100DBBF79 /* little_icon_house.png in Resources */,
 				CE2D4D971C3F482100DBBF79 /* little_icon_doorplate.png in Resources */,
+				CE8140371C4C900500729368 /* Moonlight Shadow.mp3 in Resources */,
 				CE2D4DA41C3F482100DBBF79 /* little_icon_log.png in Resources */,
 				CE2D4D8A1C3F482100DBBF79 /* little_icon_bride.png in Resources */,
 				CE2D4DA71C3F482100DBBF79 /* little_icon_rainbow.png in Resources */,
@@ -490,6 +512,7 @@
 				CEFE682F1C0300B6003103B2 /* Assets.xcassets in Resources */,
 				CE2D4D841C3F482100DBBF79 /* little_icon_bear.png in Resources */,
 				CE2D4D881C3F482100DBBF79 /* little_icon_bowArrow.png in Resources */,
+				CE8140361C4C900500729368 /* Geu Dae Wa Na.mp3 in Resources */,
 				CE2D4D9D1C3F482100DBBF79 /* little_icon_highHeels.png in Resources */,
 				CE2D4D891C3F482100DBBF79 /* little_icon_bowTie.png in Resources */,
 				CED48B301C0EE36B0050B9FD /* MainBackground.png in Resources */,
@@ -502,6 +525,7 @@
 				CE2D4D9F1C3F482100DBBF79 /* little_icon_leatherShoe.png in Resources */,
 				CE30591C1C322A5200ABD92A /* button_setting@2x.png in Resources */,
 				CE2D4D921C3F482100DBBF79 /* little_icon_couple.png in Resources */,
+				CE8140391C4C900500729368 /* 爱你.mp3 in Resources */,
 				CE2D4D951C3F482100DBBF79 /* little_icon_dinnerCandle.png in Resources */,
 				CE2D4DAC1C3F482100DBBF79 /* little_icon_talking.png in Resources */,
 				CE3059271C33E7C400ABD92A /* jenior.png in Resources */,
