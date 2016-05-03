@@ -32,17 +32,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.view addSubview:self.mainStoryScrollView];
+    //使navigation不遮挡view，且view的大小不算上navigation面积（xib没有设置项）
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    self.extendedLayoutIncludesOpaqueBars = NO;
+    //设置navigationBar为半透明(模糊)效果
+//    [self.navigationController.navigationBar setTranslucent:YES];
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    //不给scrollView在bar中的部分上下可滑
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.isPlaying = YES;
     [[RomanticMusicHelper shareMusicHelper] play];
     
-    //设置navigationBar为半透明(模糊)效果
-    [self.navigationController.navigationBar setTranslucent:YES];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"backgroud_transparentNavigationbar"] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+//    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+
+//    [self.view addSubview:self.mainStoryScrollView];
+//    
+//    self.extendedLayoutIncludesOpaqueBars = NO;
+//    self.automaticallyAdjustsScrollViewInsets = NO;
+//    
+//    //设置navigationBar为半透明(模糊)效果
+//    [self.navigationController.navigationBar setTranslucent:YES];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"backgroud_transparentNavigationbar"] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     
     self.settingButton.frame = CGRectMake(NAVIGATION_BAR_ITEM_EDGE, 0, NAVIGATION_BAR_ITEM_WIDTH, NAVIGATION_BAR_ITEM_WIDTH);
     self.shareButton.frame = CGRectMake(SCREEN_WIDTH - 2*NAVIGATION_BAR_ITEM_EDGE - NAVIGATION_BAR_ITEM_WIDTH, 0, NAVIGATION_BAR_ITEM_WIDTH, NAVIGATION_BAR_ITEM_WIDTH);
