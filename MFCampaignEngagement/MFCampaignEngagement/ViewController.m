@@ -46,7 +46,7 @@
 //    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
 //    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
 
-//    [self.view addSubview:self.mainStoryScrollView];
+    [self.view addSubview:self.mainStoryScrollView];
 //    
 //    self.extendedLayoutIncludesOpaqueBars = NO;
 //    self.automaticallyAdjustsScrollViewInsets = NO;

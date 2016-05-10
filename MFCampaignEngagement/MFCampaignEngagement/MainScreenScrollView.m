@@ -27,12 +27,12 @@
 
 @interface MainScreenScrollView ()
 
-@property (strong, nonatomic) UIImageView *contentView,*bigCloud,*middleCloud,*sun,*littleCloud1,*littleCloud2;
+@property (strong, nonatomic) UIImageView *contentView,*bigCloud,*middleCloud,*sun,*littleCloud1,*littleCloud2,*bus;
 
 @end
 
 @implementation MainScreenScrollView
-@synthesize meModel,youModel,contentView,stage,bigCloud,middleCloud,sun,littleCloud1,littleCloud2;
+@synthesize meModel,youModel,contentView,stage,bigCloud,middleCloud,sun,littleCloud1,littleCloud2,bus;
 
 - (id)init
 {
@@ -57,13 +57,13 @@
     
     [meModel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(weakSelf.contentView);
-        make.centerY.equalTo(weakSelf.contentView);
+        make.centerY.equalTo(weakSelf.contentView).with.multipliedBy(1.5);
         make.size.mas_equalTo(CGSizeMake(MF_ME_MODEL_WIDTH, MF_ME_MODEL_HEIGHT));
     }];
     
     [youModel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(weakSelf.contentView).with.offset(SCREEN_WIDTH - MF_YOU_MODEL_WIDTH);
-        make.centerY.equalTo(weakSelf.contentView);
+        make.centerY.equalTo(weakSelf.contentView).with.multipliedBy(1.5);
         make.size.mas_equalTo(CGSizeMake(MF_YOU_MODEL_WIDTH, MF_YOU_MODEL_HEIGHT));
     }];
     
@@ -126,6 +126,10 @@
         
         [middleCloud mas_updateConstraints:^(MASConstraintMaker *make) {
             make.leading.equalTo(weakSelf.contentView).with.offset((2 * SCREEN_WIDTH) -offsetX * 0.4 );
+        }];
+        
+        [bus mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(weakSelf.contentView.mas_left).offset(SCREEN_WIDTH / 7 - offsetX * 0.35);
         }];
         
     } else if (offsetX >= SCREEN_WIDTH && offsetX < SCREEN_WIDTH * 2) {
@@ -217,17 +221,73 @@
         contentView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainBackground.png"]];
         contentView.userInteractionEnabled = YES;
         
+        WS(weakSelf)
+        
+        UIImageView *mountainBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scene_mountainBackground"]];
+        [contentView addSubview:mountainBackground];
+        [mountainBackground mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(weakSelf.contentView.mas_left);
+            make.right.equalTo(weakSelf.contentView.mas_right);
+            make.height.mas_equalTo(SCREEN_HEIGHT * 0.22);
+            make.top.equalTo(weakSelf.contentView).with.offset(NAVIGATION_BAR_HEIGHT + MF_BIG_CLOUD_HEIGTH);
+        }];
+        
+        UIImageView *busBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"busBackground"]];
+        [contentView addSubview:busBackground];
+        [busBackground mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(weakSelf.contentView.mas_left);
+            make.width.mas_equalTo(SCREEN_WIDTH);
+            make.height.mas_equalTo(SCREEN_HEIGHT * 0.16);
+            make.bottom.equalTo(mountainBackground.mas_bottom);
+        }];
+        
+        UIImageView *church = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"church"]];
+        [contentView addSubview:church];
+        [church mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(weakSelf.contentView).offset(SCREEN_WIDTH/4);
+            make.width.mas_equalTo(SCREEN_WIDTH/2.5);
+            make.height.mas_equalTo(SCREEN_HEIGHT * 0.24);
+            make.bottom.equalTo(mountainBackground.mas_bottom);
+        }];
+        
+        UIImageView *palace = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"palace"]];
+        [contentView addSubview:palace];
+        [palace mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(weakSelf.contentView);
+            make.width.mas_equalTo(SCREEN_WIDTH/5);
+            make.height.mas_equalTo(SCREEN_HEIGHT * 0.15);
+            make.bottom.equalTo(mountainBackground.mas_bottom).offset(SCREEN_HEIGHT * 0.02);
+        }];
+        
+        UIImageView *teashop = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"teashop"]];
+        [contentView addSubview:teashop];
+        [teashop mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(weakSelf.contentView).offset(-SCREEN_WIDTH * 0.8);
+            make.width.mas_equalTo(SCREEN_WIDTH/6);
+            make.height.mas_equalTo(SCREEN_HEIGHT * 0.1);
+            make.bottom.equalTo(mountainBackground.mas_bottom).offset(SCREEN_HEIGHT * 0.05);
+        }];
+        
         bigCloud = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scene_bigCloud"]];
         middleCloud = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scene_middleCloud"]];
         littleCloud1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scene_littleCloud1"]];
         littleCloud2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scene_littleCloud2"]];
         sun = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scene_sun"]];
+        bus = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bus"]];
         
         [contentView addSubview:sun];
         [contentView addSubview:bigCloud];
         [contentView addSubview:middleCloud];
         [contentView addSubview:littleCloud1];
         [contentView addSubview:littleCloud2];
+        [contentView addSubview:bus];
+        
+        [bus mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(weakSelf.contentView.mas_left).offset(SCREEN_WIDTH / 7);
+            make.width.mas_equalTo(SCREEN_WIDTH/3.3);
+            make.height.mas_equalTo(SCREEN_HEIGHT * 0.08);
+            make.bottom.equalTo(mountainBackground.mas_bottom).offset(10);
+        }];
         
     }
     return contentView;
