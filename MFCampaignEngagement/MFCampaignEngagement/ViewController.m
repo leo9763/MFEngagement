@@ -11,6 +11,7 @@
 #import "MFMacro.h"
 #import "MainScreenScrollView.h"
 #import "ChildhoodController.h"
+#import "JeniorController.h"
 #import "RomanticMusicHelper.h"
 
 
@@ -66,13 +67,9 @@
     
     self.navigationItem.leftBarButtonItem = settingItem;
     self.navigationItem.rightBarButtonItems = @[shareItem,musicItem];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
+    
     //autoLayout前必须先将view添加到superView，否则会报错
     WS(weakSelf)
-    
     [mainStoryScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(weakSelf.view);
     }];
@@ -99,14 +96,24 @@
 
 - (void)meDidClick:(MainScreenScrollView *)mainScreen
 {
-    ChildhoodController *childController = [[ChildhoodController alloc] init];
-    [self.navigationController pushViewController:childController animated:YES];
+    if (mainStoryScrollView.stage == LifeStageChild) {
+        ChildhoodController *childController = [[ChildhoodController alloc] init];
+        [self.navigationController pushViewController:childController animated:YES];
+    } else {
+        JeniorController *jeniorController = [[JeniorController alloc] init];
+        [self.navigationController pushViewController:jeniorController animated:YES];
+    }
 }
 
 - (void)youDidClick:(MainScreenScrollView *)mainScreen
 {
-    ChildhoodController *childController = [[ChildhoodController alloc] init];
-    [self.navigationController pushViewController:childController animated:YES];
+    if (mainStoryScrollView.stage == LifeStageChild) {
+        ChildhoodController *childController = [[ChildhoodController alloc] init];
+        [self.navigationController pushViewController:childController animated:YES];
+    } else {
+        JeniorController *jeniorController = [[JeniorController alloc] init];
+        [self.navigationController pushViewController:jeniorController animated:YES];
+    }
 }
 
 #pragma mark - Response

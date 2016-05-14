@@ -6,16 +6,17 @@
 //  Copyright © 2015 MingFung. All rights reserved.
 //
 
-#import "ChildhoodController.h"
+#import "JeniorController.h"
 #import "Masonry.h"
 #import "MFMacro.h"
+#import "DGAaimaView.h"
 
-@interface ChildhoodController ()  <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface JeniorController ()  <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (nonatomic, strong) UIButton *backButton;
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
 @end
 
-@implementation ChildhoodController
+@implementation JeniorController
 @synthesize backButton,imagePickerController;
 
 - (void)setupView
@@ -24,7 +25,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     //使navigation不遮挡view，且view的大小不算上navigation面积（xib没有设置项）
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
@@ -33,6 +34,10 @@
     [self.navigationController.navigationBar setTranslucent:YES];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addImage)];
+    
+    DGAaimaView *animaView = [[DGAaimaView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:animaView];
+    [animaView DGAaimaView:animaView BigCloudSpeed:1.5 smallCloudSpeed:1 earthSepped:1.0 huojianSepped:2.0 littleSpeed:2];
 }
 
 #pragma mark - Life
@@ -40,18 +45,6 @@
     [super viewDidLoad];
 
     [self setupView];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    WS(weakSelf)
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
-    
 }
 
 #pragma mark - Response

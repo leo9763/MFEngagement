@@ -13,9 +13,9 @@
 #define MF_ME_RUN_SPEED_RATIO   ((SCREEN_WIDTH * 1.5 - MF_ME_MODEL_WIDTH) / SCREEN_WIDTH)
 #define MF_YOU_RUN_SPEED_RATIO  ((SCREEN_WIDTH/2 + MF_YOU_MODEL_WIDTH) / SCREEN_WIDTH)
 #define MF_ME_MODEL_WIDTH       60
-#define MF_ME_MODEL_HEIGHT      60
+#define MF_ME_MODEL_HEIGHT      100
 #define MF_YOU_MODEL_WIDTH      60
-#define MF_YOU_MODEL_HEIGHT     60
+#define MF_YOU_MODEL_HEIGHT     100
 #define MF_BIG_CLOUD_WIDTH      (SCREEN_WIDTH/1.5)
 #define MF_BIG_CLOUD_HEIGTH     (SCREEN_HEIGHT/5)
 #define MF_MIDDLE_CLOUD_WIDTH
@@ -28,11 +28,12 @@
 @interface MainScreenScrollView ()
 
 @property (strong, nonatomic) UIImageView *contentView,*bigCloud,*middleCloud,*sun,*littleCloud1,*littleCloud2,*bus;
+@property (strong, nonatomic) NSTimer *timer;
 
 @end
 
 @implementation MainScreenScrollView
-@synthesize meModel,youModel,contentView,stage,bigCloud,middleCloud,sun,littleCloud1,littleCloud2,bus;
+@synthesize timer,meModel,youModel,contentView,stage,bigCloud,middleCloud,sun,littleCloud1,littleCloud2,bus;
 
 - (id)init
 {
@@ -96,6 +97,9 @@
         make.top.equalTo(weakSelf.contentView).with.offset(NAVIGATION_BAR_HEIGHT + MF_BIG_CLOUD_HEIGTH/9);
         make.size.mas_equalTo(CGSizeMake(0.9 * MF_BIG_CLOUD_HEIGTH, 0.9 * MF_BIG_CLOUD_HEIGTH));
     }];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(updateCloudOffset) userInfo:nil repeats:YES];
+    [self.timer fire];
 }
 
 - (void)updateScreenWithOffset:(CGPoint)offset
@@ -114,14 +118,6 @@
         
         [youModel mas_updateConstraints:^(MASConstraintMaker *make) {
             make.leading.equalTo(weakSelf.contentView).with.offset(offsetX * MF_YOU_RUN_SPEED_RATIO + SCREEN_WIDTH - MF_YOU_MODEL_WIDTH);
-        }];
-        
-        [littleCloud1 mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.leading.equalTo(weakSelf.contentView).with.offset(MF_BIG_CLOUD_WIDTH/7 + offsetX * 0.3);
-        }];
-        
-        [bigCloud mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.leading.equalTo(weakSelf.contentView).with.offset((SCREEN_WIDTH - MF_BIG_CLOUD_WIDTH/2) - offsetX * 0.5);
         }];
         
         [middleCloud mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -156,6 +152,74 @@
     }
 }
 
+- (void)updateCloudOffset
+{
+    WS(weakSelf)
+    
+    static float bigFrequency = 0.0;
+    static float littleFrequency = 0.0;
+    static BOOL isBigReset = NO;
+    static BOOL isLittelReset = NO;
+    
+    if (littleFrequency >= SCREEN_WIDTH * 3 + 0.6 * MF_BIG_CLOUD_WIDTH || (littleFrequency >= SCREEN_WIDTH * 3 - MF_BIG_CLOUD_WIDTH/7 && !isLittelReset)) {
+        [littleCloud1 mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(weakSelf.contentView.mas_left);
+        }];
+        
+        [bigCloud mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(weakSelf.contentView).with.offset((SCREEN_WIDTH - MF_BIG_CLOUD_WIDTH/2) - bigFrequency);
+        }];
+        
+        isLittelReset = YES;
+        littleFrequency = 0.0;
+    } else if ((bigFrequency >= SCREEN_WIDTH - MF_BIG_CLOUD_WIDTH/2 + MF_BIG_CLOUD_WIDTH && !isBigReset) || bigFrequency >= SCREEN_WIDTH * 3 + MF_BIG_CLOUD_WIDTH) {
+        [littleCloud1 mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(weakSelf.contentView).with.offset(littleFrequency);
+        }];
+        
+        [bigCloud mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(weakSelf.contentView.mas_right);
+        }];
+        
+        isBigReset = YES;
+        bigFrequency = 0.0;
+    } else if (isBigReset && !isLittelReset) {
+        [bigCloud mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(weakSelf.contentView).with.offset(SCREEN_WIDTH * 3 - bigFrequency);
+        }];
+        
+        [littleCloud1 mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(weakSelf.contentView).with.offset(MF_BIG_CLOUD_WIDTH/7 + littleFrequency);
+        }];
+    } else if (isLittelReset && !isBigReset) {
+        [bigCloud mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(weakSelf.contentView).with.offset((SCREEN_WIDTH - MF_BIG_CLOUD_WIDTH/2) - bigFrequency);
+        }];
+        
+        [littleCloud1 mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(weakSelf.contentView).with.offset(- 0.6 * MF_BIG_CLOUD_WIDTH + littleFrequency);
+        }];
+    } else if (isBigReset && isLittelReset) {
+        [bigCloud mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(weakSelf.contentView).with.offset(SCREEN_WIDTH * 3 - bigFrequency);
+        }];
+        
+        [littleCloud1 mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(weakSelf.contentView).with.offset(- 0.6 * MF_BIG_CLOUD_WIDTH + littleFrequency);
+        }];
+    } else {
+        [littleCloud1 mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(weakSelf.contentView).with.offset(MF_BIG_CLOUD_WIDTH/7 + littleFrequency);
+        }];
+        
+        [bigCloud mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(weakSelf.contentView).with.offset((SCREEN_WIDTH - MF_BIG_CLOUD_WIDTH/2) - bigFrequency);
+        }];
+    }
+    littleFrequency = littleFrequency + 0.2;
+    bigFrequency = bigFrequency + 0.2 * 0.3;
+}
+
 #pragma mark - Response
 - (void)buttonPressed:(UIButton *)button
 {
@@ -185,7 +249,7 @@
     if (!meModel) {
         meModel = [UIButton buttonWithType:UIButtonTypeCustom];
         [meModel addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        meModel.backgroundColor = [UIColor redColor];
+        [meModel setImage:[UIImage imageNamed:@"littleboy"] forState:UIControlStateNormal];
     }
     return meModel;
 }
@@ -202,7 +266,7 @@
     if (!youModel) {
         youModel = [UIButton buttonWithType:UIButtonTypeCustom];
         [youModel addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        youModel.backgroundColor = [UIColor blueColor];
+        [youModel setImage:[UIImage imageNamed:@"littlegirl"] forState:UIControlStateNormal];
     }
     return youModel;
 }
@@ -241,6 +305,15 @@
             make.bottom.equalTo(mountainBackground.mas_bottom);
         }];
         
+        UIImageView *churchroad = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"churchroad"]];
+        [contentView addSubview:churchroad];
+        [churchroad mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(weakSelf.contentView).offset(SCREEN_WIDTH*1.02);
+            make.width.mas_equalTo(SCREEN_WIDTH);
+            make.height.mas_equalTo(SCREEN_HEIGHT * 0.25);
+            make.top.equalTo(mountainBackground.mas_bottom).offset(-SCREEN_HEIGHT * 0.01);
+        }];
+        
         UIImageView *church = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"church"]];
         [contentView addSubview:church];
         [church mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -268,6 +341,7 @@
             make.bottom.equalTo(mountainBackground.mas_bottom).offset(SCREEN_HEIGHT * 0.05);
         }];
         
+        //全局
         bigCloud = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scene_bigCloud"]];
         middleCloud = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scene_middleCloud"]];
         littleCloud1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scene_littleCloud1"]];
@@ -289,6 +363,15 @@
             make.bottom.equalTo(mountainBackground.mas_bottom).offset(10);
         }];
         
+        UIImageView *knowroad = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"knowroad"]];
+        [contentView addSubview:knowroad];
+        [knowroad mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(weakSelf.contentView);
+            make.width.mas_equalTo(SCREEN_WIDTH);
+            make.height.mas_equalTo(SCREEN_HEIGHT * 0.3);
+            make.top.equalTo(weakSelf.bus.mas_bottom).offset(SCREEN_HEIGHT * 0.01);
+        }];
+        
     }
     return contentView;
 }
@@ -304,16 +387,16 @@
         
         switch (stage) {
             case LifeStageChild:
-                [meModel setImage:[UIImage imageNamed:@"child"] forState:UIControlStateNormal];
-                [youModel setImage:[UIImage imageNamed:@"child"] forState:UIControlStateNormal];
+                [meModel setImage:[UIImage imageNamed:@"littleboy"] forState:UIControlStateNormal];
+                [youModel setImage:[UIImage imageNamed:@"littlegirl"] forState:UIControlStateNormal];
                 break;
             case LifeStageJenior:
-                [meModel setImage:[UIImage imageNamed:@"jenior"] forState:UIControlStateNormal];
-                [youModel setImage:[UIImage imageNamed:@"jenior"] forState:UIControlStateNormal];
+                [meModel setImage:[UIImage imageNamed:@"littleboy"] forState:UIControlStateNormal];
+                [youModel setImage:[UIImage imageNamed:@"littlegirl"] forState:UIControlStateNormal];
                 break;
             case LifeStageSenior:
-                [meModel setImage:[UIImage imageNamed:@"senior"] forState:UIControlStateNormal];
-                [youModel setImage:[UIImage imageNamed:@"senior"] forState:UIControlStateNormal];
+                [meModel setImage:[UIImage imageNamed:@"littleboy"] forState:UIControlStateNormal];
+                [youModel setImage:[UIImage imageNamed:@"littlegirl"] forState:UIControlStateNormal];
                 break;
             default:
                 break;
