@@ -94,6 +94,11 @@
     [mainStoryScrollView updateScreenWithOffset:scrollView.contentOffset];
 }
 
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [mainStoryScrollView resetMeAndYouAngle];
+}
+
 - (void)meDidClick:(MainScreenScrollView *)mainScreen
 {
     if (mainStoryScrollView.stage == LifeStageChild) {

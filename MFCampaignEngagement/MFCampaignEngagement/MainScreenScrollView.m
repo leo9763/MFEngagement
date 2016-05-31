@@ -29,6 +29,9 @@
 
 @property (strong, nonatomic) UIImageView *contentView,*bigCloud,*middleCloud,*sun,*littleCloud1,*littleCloud2,*bus;
 @property (strong, nonatomic) NSTimer *timer;
+@property NSUInteger angle;
+@property NSInteger multe;
+@property BOOL isHalfPlace;
 
 @end
 
@@ -42,6 +45,9 @@
         [self.contentView addSubview:self.meModel];
         [self.contentView addSubview:self.youModel];
         self.stage = LifeStageUnborn;
+        _angle = 0;
+        _multe = 1;
+        _isHalfPlace = YES;
     }
     return self;
 }
@@ -150,6 +156,32 @@
         
         return;
     }
+    
+    if (_angle <= 60 && !_isHalfPlace) {
+        meModel.transform = CGAffineTransformRotate(meModel.transform, _multe * M_PI/180/2);
+        youModel.transform = CGAffineTransformRotate(youModel.transform, -1 * _multe * M_PI/180/2);
+        _angle++;
+    } if (_angle <= 30) {
+        meModel.transform = CGAffineTransformRotate(meModel.transform, _multe * M_PI/180/2);
+        youModel.transform = CGAffineTransformRotate(youModel.transform, -1 * _multe * M_PI/180/2);
+        _angle++;
+    }else {
+        _angle = 0;
+        _multe = -1 * _multe;
+        _isHalfPlace = NO;
+    }
+}
+
+- (void)resetMeAndYouAngle
+{
+    [UIView animateWithDuration:0.35 animations:^{
+        meModel.transform = CGAffineTransformMakeRotation(0);
+        youModel.transform = CGAffineTransformMakeRotation(0);
+    }];
+    
+    _angle = 0;
+    _multe = 1;
+    _isHalfPlace = YES;
 }
 
 - (void)updateCloudOffset

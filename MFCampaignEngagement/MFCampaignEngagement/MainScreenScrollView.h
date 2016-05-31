@@ -33,5 +33,6 @@ typedef NS_ENUM(NSUInteger, LifeStage) {
 
 - (void)makeConstraints;
 - (void)updateScreenWithOffset:(CGPoint)offset;
+- (void)resetMeAndYouAngle;
 
 @end
