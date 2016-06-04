@@ -76,10 +76,6 @@
 		CE2D4DD31C44958100DBBF79 /* RomanticMusicHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2D4DD21C44958100DBBF79 /* RomanticMusicHelper.m */; };
 		CE2D4DD61C44A33100DBBF79 /* DirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2D4DD51C44A33100DBBF79 /* DirectoryWatcher.m */; };
 		CE2D4DD81C44E5AA00DBBF79 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2D4DD71C44E5AA00DBBF79 /* AVFoundation.framework */; };
-		CE30591C1C322A5200ABD92A /* button_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE30591B1C322A5200ABD92A /* button_setting@2x.png */; };
-		CE3059271C33E7C400ABD92A /* jenior.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3059261C33E7C400ABD92A /* jenior.png */; };
-		CE3059291C33E8FF00ABD92A /* senior.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3059281C33E8FF00ABD92A /* senior.png */; };
-		CE30592B1C33E95600ABD92A /* child.png in Resources */ = {isa = PBXBuildFile; fileRef = CE30592A1C33E95600ABD92A /* child.png */; };
 		CE8140361C4C900500729368 /* Geu Dae Wa Na.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE8140321C4C900500729368 /* Geu Dae Wa Na.mp3 */; };
 		CE8140371C4C900500729368 /* Moonlight Shadow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE8140331C4C900500729368 /* Moonlight Shadow.mp3 */; };
 		CE8140381C4C900500729368 /* Na Ppeun Yeo Ja Ya .mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE8140341C4C900500729368 /* Na Ppeun Yeo Ja Ya .mp3 */; };
@@ -106,6 +102,12 @@
 		CEE3CA8E1CE6D7F800F15964 /* huojian@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE3CA861CE6D7F800F15964 /* huojian@3x.png */; };
 		CEE3CA911CE6D87100F15964 /* JeniorController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE3CA8F1CE6D87100F15964 /* JeniorController.m */; };
 		CEE3CAA61CE7189C00F15964 /* universe.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE3CAA51CE7189C00F15964 /* universe.png */; };
+		CEE52BE61CFD2E0A00D1E1EB /* EasyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE52BE51CFD2E0A00D1E1EB /* EasyTableView.m */; };
+		CEE52E4F1D02854E00D1E1EB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE52E4E1D02854E00D1E1EB /* CoreData.framework */; };
+		CEE52E5B1D02890600D1E1EB /* JeniorStagePhotoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEE52E591D02890600D1E1EB /* JeniorStagePhotoModel.xcdatamodeld */; };
+		CEE52E661D02BD9800D1E1EB /* JeniorAlbum+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE52E631D02BD9800D1E1EB /* JeniorAlbum+CoreDataProperties.m */; };
+		CEE52E671D02BD9800D1E1EB /* JeniorAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE52E651D02BD9800D1E1EB /* JeniorAlbum.m */; };
+		CEE52E691D02C5F400D1E1EB /* imageView_rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE52E681D02C5F400D1E1EB /* imageView_rightArrow.png */; };
 		CEFE68241C0300B6003103B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFE68231C0300B6003103B2 /* main.m */; };
 		CEFE68271C0300B6003103B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFE68261C0300B6003103B2 /* AppDelegate.m */; };
 		CEFE682A1C0300B6003103B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFE68291C0300B6003103B2 /* ViewController.m */; };
@@ -191,10 +193,6 @@
 		CE2D4DD41C44A33100DBBF79 /* DirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryWatcher.h; sourceTree = "<group>"; };
 		CE2D4DD51C44A33100DBBF79 /* DirectoryWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryWatcher.m; sourceTree = "<group>"; };
 		CE2D4DD71C44E5AA00DBBF79 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		CE30591B1C322A5200ABD92A /* button_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_setting@2x.png"; sourceTree = "<group>"; };
-		CE3059261C33E7C400ABD92A /* jenior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jenior.png; sourceTree = "<group>"; };
-		CE3059281C33E8FF00ABD92A /* senior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = senior.png; sourceTree = "<group>"; };
-		CE30592A1C33E95600ABD92A /* child.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = child.png; sourceTree = "<group>"; };
 		CE8140321C4C900500729368 /* Geu Dae Wa Na.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Geu Dae Wa Na.mp3"; sourceTree = "<group>"; };
 		CE8140331C4C900500729368 /* Moonlight Shadow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Moonlight Shadow.mp3"; sourceTree = "<group>"; };
 		CE8140341C4C900500729368 /* Na Ppeun Yeo Ja Ya .mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Na Ppeun Yeo Ja Ya .mp3"; sourceTree = "<group>"; };
@@ -226,6 +224,15 @@
 		CEE3CA8F1CE6D87100F15964 /* JeniorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JeniorController.m; sourceTree = "<group>"; };
 		CEE3CA901CE6D87100F15964 /* JeniorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JeniorController.h; sourceTree = "<group>"; };
 		CEE3CAA51CE7189C00F15964 /* universe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = universe.png; sourceTree = "<group>"; };
+		CEE52BE41CFD2E0A00D1E1EB /* EasyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyTableView.h; sourceTree = "<group>"; };
+		CEE52BE51CFD2E0A00D1E1EB /* EasyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyTableView.m; sourceTree = "<group>"; };
+		CEE52E4E1D02854E00D1E1EB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CEE52E5A1D02890600D1E1EB /* JeniorStagePhotoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JeniorStagePhotoModel.xcdatamodel; sourceTree = "<group>"; };
+		CEE52E621D02BD9800D1E1EB /* JeniorAlbum+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JeniorAlbum+CoreDataProperties.h"; sourceTree = "<group>"; };
+		CEE52E631D02BD9800D1E1EB /* JeniorAlbum+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JeniorAlbum+CoreDataProperties.m"; sourceTree = "<group>"; };
+		CEE52E641D02BD9800D1E1EB /* JeniorAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JeniorAlbum.h; sourceTree = "<group>"; };
+		CEE52E651D02BD9800D1E1EB /* JeniorAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JeniorAlbum.m; sourceTree = "<group>"; };
+		CEE52E681D02C5F400D1E1EB /* imageView_rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageView_rightArrow.png; sourceTree = "<group>"; };
 		CEFE681F1C0300B6003103B2 /* MFCampaignEngagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MFCampaignEngagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFE68231C0300B6003103B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CEFE68251C0300B6003103B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -244,6 +251,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE52E4F1D02854E00D1E1EB /* CoreData.framework in Frameworks */,
 				CE2D4DD81C44E5AA00DBBF79 /* AVFoundation.framework in Frameworks */,
 				3554649CE2FCB79134885826 /* libPods-MFCampaignEngagement.a in Frameworks */,
 			);
@@ -264,6 +272,7 @@
 		5C75E8C427F830555D9EB755 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEE52E4E1D02854E00D1E1EB /* CoreData.framework */,
 				CE2D4DD71C44E5AA00DBBF79 /* AVFoundation.framework */,
 				F2EBDCB5D5B04BF527D66467 /* libPods-MFCampaignEngagement.a */,
 			);
@@ -273,6 +282,8 @@
 		8C9BC1D61C2FA8B90034849F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CEE52BE41CFD2E0A00D1E1EB /* EasyTableView.h */,
+				CEE52BE51CFD2E0A00D1E1EB /* EasyTableView.m */,
 				8C9BC1D71C2FA9580034849F /* MFAlertWindow.h */,
 				8C9BC1D81C2FA9580034849F /* MFAlertWindow.m */,
 			);
@@ -282,6 +293,7 @@
 		CE2D4D4F1C3F482100DBBF79 /* little_icon2 */ = {
 			isa = PBXGroup;
 			children = (
+				CEE52E681D02C5F400D1E1EB /* imageView_rightArrow.png */,
 				CE2D4D501C3F482100DBBF79 /* images */,
 			);
 			path = little_icon2;
@@ -388,13 +400,6 @@
 			path = Musics;
 			sourceTree = "<group>";
 		};
-		CE903F171C082DBF00730C7A /* ViewModles */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModles;
-			sourceTree = "<group>";
-		};
 		CE903F181C082DBF00730C7A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,11 +429,7 @@
 				CE2D4DC11C4111A200DBBF79 /* background */,
 				CE2D4DB61C3F9EA300DBBF79 /* scene_thing */,
 				CE2D4D4F1C3F482100DBBF79 /* little_icon2 */,
-				CE30592A1C33E95600ABD92A /* child.png */,
-				CE3059281C33E8FF00ABD92A /* senior.png */,
-				CE3059261C33E7C400ABD92A /* jenior.png */,
 				CED48B2F1C0EE36B0050B9FD /* MainBackground.png */,
-				CE30591B1C322A5200ABD92A /* button_setting@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -447,6 +448,18 @@
 				CEE3CA861CE6D7F800F15964 /* huojian@3x.png */,
 			);
 			path = earth;
+			sourceTree = "<group>";
+		};
+		CEE52E4D1D02853300D1E1EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEE52E621D02BD9800D1E1EB /* JeniorAlbum+CoreDataProperties.h */,
+				CEE52E631D02BD9800D1E1EB /* JeniorAlbum+CoreDataProperties.m */,
+				CEE52E641D02BD9800D1E1EB /* JeniorAlbum.h */,
+				CEE52E651D02BD9800D1E1EB /* JeniorAlbum.m */,
+				CEE52E591D02890600D1E1EB /* JeniorStagePhotoModel.xcdatamodeld */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CEFE68161C0300B6003103B2 = {
@@ -485,9 +498,9 @@
 				CE2D4DD41C44A33100DBBF79 /* DirectoryWatcher.h */,
 				CE2D4DD51C44A33100DBBF79 /* DirectoryWatcher.m */,
 				8CCF8AAC1C0C98A7003C1334 /* MFMacro.h */,
+				CEE52E4D1D02853300D1E1EB /* Models */,
 				8C9BC1D61C2FA8B90034849F /* Utilities */,
 				CED48B191C0BFD9D0050B9FD /* MFCategories */,
-				CE903F171C082DBF00730C7A /* ViewModles */,
 				CE903F181C082DBF00730C7A /* Views */,
 				CEFE682B1C0300B6003103B2 /* Main.storyboard */,
 				CEFE682E1C0300B6003103B2 /* Assets.xcassets */,
@@ -573,7 +586,6 @@
 				CEE3CA8C1CE6D7F800F15964 /* fire3@3X(1).png in Resources */,
 				CE2D4DBD1C3F9EA300DBBF79 /* scene_littleCloud1.png in Resources */,
 				CEE3CA871CE6D7F800F15964 /* earth@3x.png in Resources */,
-				CE30592B1C33E95600ABD92A /* child.png in Resources */,
 				CEE3CA721CE2E96100F15964 /* monkey.png in Resources */,
 				CE2D4DB01C3F482100DBBF79 /* little_icon_weddingCake.png in Resources */,
 				CEFE68321C0300B6003103B2 /* LaunchScreen.storyboard in Resources */,
@@ -601,7 +613,6 @@
 				8CBA541F1CE0DA5C00727739 /* busBackground.png in Resources */,
 				CE2D4DA61C3F482100DBBF79 /* little_icon_necklace.png in Resources */,
 				CEE3CA751CE30E7B00F15964 /* churchroad.png in Resources */,
-				CE3059291C33E8FF00ABD92A /* senior.png in Resources */,
 				CE2D4DA31C3F482100DBBF79 /* little_icon_lock.png in Resources */,
 				CE2D4DBC1C3F9EA300DBBF79 /* scene_bigCloud.png in Resources */,
 				CE2D4D851C3F482100DBBF79 /* little_icon_bed.png in Resources */,
@@ -614,6 +625,7 @@
 				CEE3CA8E1CE6D7F800F15964 /* huojian@3x.png in Resources */,
 				CE2D4D881C3F482100DBBF79 /* little_icon_bowArrow.png in Resources */,
 				CEE3CA711CE2E96100F15964 /* littlegirl.png in Resources */,
+				CEE52E691D02C5F400D1E1EB /* imageView_rightArrow.png in Resources */,
 				CE8140361C4C900500729368 /* Geu Dae Wa Na.mp3 in Resources */,
 				CE2D4D9D1C3F482100DBBF79 /* little_icon_highHeels.png in Resources */,
 				CE2D4D891C3F482100DBBF79 /* little_icon_bowTie.png in Resources */,
@@ -626,13 +638,11 @@
 				CE2D4D831C3F482100DBBF79 /* little_icon_ballon.png in Resources */,
 				CE2D4D991C3F482100DBBF79 /* little_icon_doubleRings.png in Resources */,
 				CE2D4D9F1C3F482100DBBF79 /* little_icon_leatherShoe.png in Resources */,
-				CE30591C1C322A5200ABD92A /* button_setting@2x.png in Resources */,
 				CE2D4D921C3F482100DBBF79 /* little_icon_couple.png in Resources */,
 				8CD9A1131CE2277300139BA2 /* teashop.png in Resources */,
 				CE8140391C4C900500729368 /* 爱你.mp3 in Resources */,
 				CE2D4D951C3F482100DBBF79 /* little_icon_dinnerCandle.png in Resources */,
 				CE2D4DAC1C3F482100DBBF79 /* little_icon_talking.png in Resources */,
-				CE3059271C33E7C400ABD92A /* jenior.png in Resources */,
 				CE2D4DBF1C3F9EA300DBBF79 /* scene_middleCloud.png in Resources */,
 				CE2D4D941C3F482100DBBF79 /* little_icon_dinner.png in Resources */,
 				CE2D4D8E1C3F482100DBBF79 /* little_icon_card.png in Resources */,
@@ -718,15 +728,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE3CA7C1CE6D75D00F15964 /* DGAaimaView.m in Sources */,
+				CEE52BE61CFD2E0A00D1E1EB /* EasyTableView.m in Sources */,
 				CE2D4DC71C43B07900DBBF79 /* MainScreenScrollView.m in Sources */,
 				CE2D4DD31C44958100DBBF79 /* RomanticMusicHelper.m in Sources */,
+				CEE52E5B1D02890600D1E1EB /* JeniorStagePhotoModel.xcdatamodeld in Sources */,
 				CE903F1B1C082E0D00730C7A /* MainStoryView.m in Sources */,
 				CEE3CA911CE6D87100F15964 /* JeniorController.m in Sources */,
+				CEE52E671D02BD9800D1E1EB /* JeniorAlbum.m in Sources */,
 				8C9BC1D91C2FA9580034849F /* MFAlertWindow.m in Sources */,
 				CEFE682A1C0300B6003103B2 /* ViewController.m in Sources */,
 				8C9CBB4A1C317FA10015D747 /* ChildhoodController.m in Sources */,
 				CEFE68271C0300B6003103B2 /* AppDelegate.m in Sources */,
 				CED48B1C1C0C02770050B9FD /* UIView+MFViewTools.m in Sources */,
+				CEE52E661D02BD9800D1E1EB /* JeniorAlbum+CoreDataProperties.m in Sources */,
 				CE2D4DD61C44A33100DBBF79 /* DirectoryWatcher.m in Sources */,
 				CEE3CA7D1CE6D75D00F15964 /* DGEarthView.m in Sources */,
 				CEFE68241C0300B6003103B2 /* main.m in Sources */,
@@ -913,6 +927,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CEE52E591D02890600D1E1EB /* JeniorStagePhotoModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CEE52E5A1D02890600D1E1EB /* JeniorStagePhotoModel.xcdatamodel */,
+			);
+			currentVersion = CEE52E5A1D02890600D1E1EB /* JeniorStagePhotoModel.xcdatamodel */;
+			path = JeniorStagePhotoModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CEFE68171C0300B6003103B2 /* Project object */;
 }

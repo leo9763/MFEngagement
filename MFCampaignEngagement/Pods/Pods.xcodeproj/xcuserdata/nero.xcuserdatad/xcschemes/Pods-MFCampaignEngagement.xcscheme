@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B48134CE9D86F54632BF57E8'
+               BlueprintIdentifier = 'A73FC1D68069BD65B5648112'
                BlueprintName = 'Pods-MFCampaignEngagement'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-MFCampaignEngagement.a'>

@@ -4,8 +4,9 @@
 # use_frameworks!
 
 target 'MFCampaignEngagement' do
-pod ’YTKNetwork’
-pod ‘FMDB’
-pod ‘Masonry’
+pod 'YTKNetwork'
+pod 'FMDB'
+pod 'Masonry'
+pod 'MagicalRecord'
 end
 

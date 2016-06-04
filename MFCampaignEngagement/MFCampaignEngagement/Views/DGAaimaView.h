@@ -7,11 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DGEarthView.h"
+
+@class DGEarthView;
+
+@protocol DGEarthViewDidTapDelegate <NSObject>
+@required
+- (void)didTapInEarthView:(DGEarthView *)earthView;
+@end
+
+
 @interface DGAaimaView : UIView
 
-@property(nonatomic,strong)DGEarthView *ainmeView;
+@property (nonatomic,strong) DGEarthView *ainmeView;
 
 -(void)DGAaimaView:(DGAaimaView*)animView BigCloudSpeed:(CGFloat)BigCS smallCloudSpeed:(CGFloat)SmaCS earthSepped:(CGFloat)eCS huojianSepped:(CGFloat)hCS littleSpeed:(CGFloat)LCS;
+
+- (id)initWithFrame:(CGRect)frame delegate:(id<DGEarthViewDidTapDelegate>)delegate;
 
 @end

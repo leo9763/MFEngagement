@@ -27,6 +27,9 @@ PODS:
   - FMDB/common (2.5)
   - FMDB/standard (2.5):
     - FMDB/common
+  - MagicalRecord (2.3.2):
+    - MagicalRecord/Core (= 2.3.2)
+  - MagicalRecord/Core (2.3.2)
   - Masonry (0.6.3)
   - YTKNetwork (0.5.0):
     - AFDownloadRequestOperation (~> 2.0)
@@ -34,6 +37,7 @@ PODS:
 
 DEPENDENCIES:
   - FMDB
+  - MagicalRecord
   - Masonry
   - YTKNetwork
 
@@ -41,6 +45,7 @@ SPEC CHECKSUMS:
   AFDownloadRequestOperation: 748a1643423e1ddb23f2178f778087d4f0ae8ac7
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   YTKNetwork: 3f163c181ce5f03d52cf88f39d6757f46894280c
 

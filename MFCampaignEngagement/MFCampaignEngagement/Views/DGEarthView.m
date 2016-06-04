@@ -32,6 +32,7 @@
         
         
         imageViewEarth = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/1.3, SCREEN_WIDTH/1.3)];
+        imageViewEarth.userInteractionEnabled = YES;
         imageViewEarth.image=[UIImage imageNamed:@"earth@3x"];
         imageViewEarth.center = CGPointMake(SCREEN_WIDTH/2, self.frame.size.height/2);
         [self addSubview:imageViewEarth];
@@ -102,7 +103,7 @@
 
 - (void)didEarthTap:(id)sender
 {
-    
+    [self.delegate didTapInEarthView:self];
 }
 
 @end
