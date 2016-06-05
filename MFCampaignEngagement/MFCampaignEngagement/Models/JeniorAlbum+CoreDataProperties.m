@@ -17,5 +17,6 @@
 @dynamic date;
 @dynamic photos;
 @dynamic isExpend;
+@dynamic coverImage;
 
 @end

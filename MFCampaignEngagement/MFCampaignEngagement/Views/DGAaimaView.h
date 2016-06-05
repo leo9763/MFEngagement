@@ -19,6 +19,7 @@
 @interface DGAaimaView : UIView
 
 @property (nonatomic,strong) DGEarthView *ainmeView;
+@property (nonatomic,strong) CADisplayLink *link;
 
 -(void)DGAaimaView:(DGAaimaView*)animView BigCloudSpeed:(CGFloat)BigCS smallCloudSpeed:(CGFloat)SmaCS earthSepped:(CGFloat)eCS huojianSepped:(CGFloat)hCS littleSpeed:(CGFloat)LCS;
 

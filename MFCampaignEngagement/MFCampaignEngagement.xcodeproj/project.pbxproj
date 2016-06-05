@@ -11,6 +11,7 @@
 		8C822D631CDF809A0061C2F3 /* scene_mountainBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C822D621CDF809A0061C2F3 /* scene_mountainBackground.png */; };
 		8C9BC1D91C2FA9580034849F /* MFAlertWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BC1D81C2FA9580034849F /* MFAlertWindow.m */; };
 		8C9CBB4A1C317FA10015D747 /* ChildhoodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBB491C317FA10015D747 /* ChildhoodController.m */; };
+		8CB4807A1D03BFBC0056DDEB /* MFAlbumCoverEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB480791D03BFBC0056DDEB /* MFAlbumCoverEditView.m */; };
 		8CBA541F1CE0DA5C00727739 /* busBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CBA541E1CE0DA5C00727739 /* busBackground.png */; };
 		8CBA54211CE0E18800727739 /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CBA54201CE0E18800727739 /* bus.png */; };
 		8CD9A10F1CE2208100139BA2 /* church.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CD9A10E1CE2208100139BA2 /* church.png */; };
@@ -123,6 +124,8 @@
 		8C9BC1D81C2FA9580034849F /* MFAlertWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAlertWindow.m; sourceTree = "<group>"; };
 		8C9CBB481C317FA10015D747 /* ChildhoodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildhoodController.h; sourceTree = "<group>"; };
 		8C9CBB491C317FA10015D747 /* ChildhoodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildhoodController.m; sourceTree = "<group>"; };
+		8CB480781D03BFBC0056DDEB /* MFAlbumCoverEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAlbumCoverEditView.h; sourceTree = "<group>"; };
+		8CB480791D03BFBC0056DDEB /* MFAlbumCoverEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAlbumCoverEditView.m; sourceTree = "<group>"; };
 		8CBA541E1CE0DA5C00727739 /* busBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = busBackground.png; sourceTree = "<group>"; };
 		8CBA54201CE0E18800727739 /* bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bus.png; sourceTree = "<group>"; };
 		8CCF8AAC1C0C98A7003C1334 /* MFMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFMacro.h; sourceTree = "<group>"; };
@@ -409,6 +412,8 @@
 				CEE3CA791CE6D75D00F15964 /* DGEarthView.m */,
 				CE903F191C082E0D00730C7A /* MainStoryView.h */,
 				CE903F1A1C082E0D00730C7A /* MainStoryView.m */,
+				8CB480781D03BFBC0056DDEB /* MFAlbumCoverEditView.h */,
+				8CB480791D03BFBC0056DDEB /* MFAlbumCoverEditView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -742,6 +747,7 @@
 				CED48B1C1C0C02770050B9FD /* UIView+MFViewTools.m in Sources */,
 				CEE52E661D02BD9800D1E1EB /* JeniorAlbum+CoreDataProperties.m in Sources */,
 				CE2D4DD61C44A33100DBBF79 /* DirectoryWatcher.m in Sources */,
+				8CB4807A1D03BFBC0056DDEB /* MFAlbumCoverEditView.m in Sources */,
 				CEE3CA7D1CE6D75D00F15964 /* DGEarthView.m in Sources */,
 				CEFE68241C0300B6003103B2 /* main.m in Sources */,
 			);
@@ -873,7 +879,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MF.MFCampaignEngagement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "73684307-20f0-4312-93cc-c60cba00f373";
+				PROVISIONING_PROFILE = "e77490a1-1d33-45ca-8361-246a09a4c097";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/** \"$(SRCROOT)/MFCampaignEngagement/MFMacro.h\"";
 			};
 			name = Debug;
@@ -900,7 +906,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MF.MFCampaignEngagement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "73684307-20f0-4312-93cc-c60cba00f373";
+				PROVISIONING_PROFILE = "e77490a1-1d33-45ca-8361-246a09a4c097";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/** \"$(SRCROOT)/MFCampaignEngagement/MFMacro.h\"";
 			};
 			name = Release;

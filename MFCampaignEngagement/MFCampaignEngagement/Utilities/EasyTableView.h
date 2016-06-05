@@ -61,5 +61,6 @@ typedef NS_ENUM(NSUInteger, EasyTableViewOrientation) {
 - (instancetype)initWithFrame:(CGRect)frame ofHeight:(CGFloat)cellHeight;
 - (void)setContentOffset:(CGPoint)offset animated:(BOOL)animated;
 - (void)reload;
-
+- (void)deleteRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation;
+- (void)insertRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation;
 @end

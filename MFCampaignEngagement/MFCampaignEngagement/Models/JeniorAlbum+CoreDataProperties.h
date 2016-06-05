@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSDate *date;
 @property (nullable, nonatomic, retain) id photos;
 @property (nonatomic, assign) BOOL isExpend;
+@property (nullable, nonatomic, retain) NSString *coverImage;
 
 @end
 

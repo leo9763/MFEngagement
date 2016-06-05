@@ -210,5 +210,16 @@
     return cell;
 }
 
+#pragma mark - TableViewMethods
+- (void)deleteRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation
+{
+    [_tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+}
+
+- (void)insertRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation
+{
+    [_tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+}
+
 @end
 

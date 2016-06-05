@@ -21,8 +21,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor =[UIColor blackColor];
-        CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(setNeedsDisplay)];
-        [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+        _link = [CADisplayLink displayLinkWithTarget:self selector:@selector(setNeedsDisplay)];
+        [_link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
         
         UIImageView *universe = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"universe"]];
         universe.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
@@ -33,6 +33,11 @@
         ainmeView.delegate = delegate;
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [_link invalidate];_link = nil;
 }
 
 @end

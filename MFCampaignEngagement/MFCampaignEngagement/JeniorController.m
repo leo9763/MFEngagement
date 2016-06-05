@@ -13,6 +13,7 @@
 #import "EasyTableView.h"
 #import "MagicalRecord.h"
 #import "JeniorAlbum.h"
+#import "MFAlbumCoverEditView.h"
 
 
 #define HORIZONTAL_TABLEVIEW_HEIGHT	[UIScreen mainScreen].bounds.size.height/4
@@ -32,6 +33,8 @@
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
 @property (nonatomic, strong) EasyTableView *tableView;
 @property (nonatomic, strong) NSMutableArray *myAlbums;
+@property (nonatomic, assign) BOOL isShow;
+@property (nonatomic, strong) MFAlbumCoverEditView *albumCoverEditView;
 @end
 
 @implementation JeniorController
@@ -56,7 +59,6 @@
     //方法2
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addImage)];
     self.extendedLayoutIncludesOpaqueBars = YES;
     
     DGAaimaView *animaView = [[DGAaimaView alloc] initWithFrame:self.view.bounds delegate:self];
@@ -69,7 +71,8 @@
     self.tableView.delegate	= self;
     self.tableView.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.tableView.allowsSelection = YES;
-    self.tableView.tableView.separatorColor	= [UIColor darkGrayColor];
+    self.tableView.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.tableView.tableView.separatorColor	= [UIColor darkGrayColor];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
     
     [self.view addSubview:self.tableView];
@@ -80,30 +83,27 @@
     //初始化core data 数据库
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"Model.sqlite"];
     
-    self.myAlbums = [NSMutableArray array];
-    NSArray *areas = @[@"Russia",@"Thailand",@"Korea"];
+    //创建
+//    self.myAlbums = [NSMutableArray array];
+//    NSArray *areas = @[@"Russia",@"Thailand",@"Korea"];
+//    for (NSString *area in areas) {
+//        JeniorAlbum *album = [JeniorAlbum MR_createEntity];
+//        album.area = area;
+//        album.photos = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8"];
+//        album.date = [NSDate date];
+//        [_myAlbums addObject:album];
+//    }
     
-    for (NSString *area in areas) {
-        JeniorAlbum *album = [JeniorAlbum MR_createEntity];
-        album.area = area;
-        album.photos = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8"];
-        album.date = [NSDate date];
-        [_myAlbums addObject:album];
-    }
+    //查询
+    self.myAlbums = [NSMutableArray arrayWithArray:[JeniorAlbum MR_findAll]];
+    
+    //删除
+//    for (JeniorAlbum *album in self.myAlbums) {
+//        [album MR_deleteEntity];
+//    }
     
     //保存
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-    
-    //查询
-//    NSArray *albums1 = [JeniorAlbum MR_findAll];
-//    for (JeniorAlbum *album in albums1) {
-//        NSLog(@"all albums: area-%@,date-%@,photos-%@",album.area,album.date,album.photos);
-//    }
-//    
-//    NSArray *albums2 = [JeniorAlbum MR_findByAttribute:@"area" withValue:@"Russia"];
-//    for (JeniorAlbum *album in albums2) {
-//        NSLog(@"find albums: area-%@,date-%@,photos-%@",album.area,album.date,album.photos);
-//    }
 }
 
 #pragma mark - Life
@@ -118,6 +118,7 @@
 - (void)buttonPressed:(UIButton *)button
 {
     if (button == backButton) {
+        
         [self dismissViewControllerAnimated:YES completion:^{
             
         }];
@@ -135,18 +136,42 @@
     }
 }
 
-- (void)sectionDidTap:(id)sender
+- (void)albumSectionDidTap:(id)sender
 {
     UIView *backgroundView = (UIView *)sender;
-    JeniorAlbum *album = _myAlbums[backgroundView.tag];
-    album.isExpend = YES;
+    NSUInteger section = backgroundView.tag;
+    JeniorAlbum *album = _myAlbums[section];
+    
+    if (album.isExpend == YES) {
+        
+        // 缩回去
+        album.isExpend = NO;
+        
+        NSMutableArray *indexPaths = [NSMutableArray array];
+        for (int i = 0; i < [album.photos count]+1; i++) {
+            
+            [indexPaths addObject:[NSIndexPath indexPathForItem:i inSection:section]];
+        }
+        [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+        
+    } else {
+        
+        // 显示出来
+        album.isExpend = YES;
+        
+        NSMutableArray *indexPaths = [NSMutableArray array];
+        for (int i = 0; i < [album.photos count]+1; i++) {
+            
+            [indexPaths addObject:[NSIndexPath indexPathForItem:i inSection:section]];
+        }
+        [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
 
-- (void)addImage
+- (void)addAlbumSectionDidTap:(id)sender
 {
-    [self presentViewController:self.imagePickerController animated:YES completion:^{
-        
-    }];
+//    [self presentViewController:self.imagePickerController animated:YES completion:^{}];
+    [self.view addSubview:self.albumCoverEditView];
 }
 
 #pragma mark - Delegate Methods
@@ -154,26 +179,22 @@
 {
     if (picker == self.imagePickerController) {
         UIImage *originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-        UIImageWriteToSavedPhotosAlbum(originalImage, self, @selector(imagePickerController:didFinishPickingMediaWithInfo:), nil);
+//        UIImageWriteToSavedPhotosAlbum(originalImage, self, @selector(imagePickerController:didFinishPickingMediaWithInfo:), nil);
     }
 //    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
-    [self.imagePickerController dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    [self.imagePickerController dismissViewControllerAnimated:YES completion:^{}];
 }
 
-- (void)didTapInEarthView:(DGEarthView *)earthView
+- (void)didTapInEarthView:(id)sender
 {
-    static BOOL isShow = NO;
-    
     CGRect or = self.tableView.frame;
     [UIView animateWithDuration:0.5 animations:^{
-        if (!isShow) {
+        if (!_isShow) {
             self.tableView.frame = CGRectMake(CGRectGetMinX(or), CGRectGetMinY(or)-CGRectGetHeight(or), CGRectGetWidth(or), CGRectGetHeight(or));
-            isShow = YES;
+            _isShow = YES;
         } else {
             self.tableView.frame = CGRectMake(CGRectGetMinX(or), CGRectGetMinY(or)+CGRectGetHeight(or), CGRectGetWidth(or), CGRectGetHeight(or));
-            isShow = NO;
+            _isShow = NO;
         }
     }];
 }
@@ -277,23 +298,29 @@
 // The height of the header section view MUST be the same as your HORIZONTAL_TABLEVIEW_HEIGHT (horizontal EasyTableView only)
 - (UIView *)easyTableView:(EasyTableView*)easyTableView viewForHeaderInSection:(NSInteger)section {
     
-    if (section == _myAlbums.count+1) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, VERTICAL_TABLEVIEW_WIDTH/1.5, HORIZONTAL_TABLEVIEW_HEIGHT)];
-        label.backgroundColor = [UIColor redColor];
-        label.text = @"++++";
-        return label;
+    if (section == _myAlbums.count) {
+        UIButton *addAlbum = [UIButton buttonWithType:UIButtonTypeCustom];
+        [addAlbum setBackgroundColor:[UIColor greenColor]];
+        [addAlbum addTarget:self action:@selector(addAlbumSectionDidTap:) forControlEvents:UIControlEventTouchUpInside];
+        addAlbum.frame = CGRectMake(0, 0, VERTICAL_TABLEVIEW_WIDTH/1.5, HORIZONTAL_TABLEVIEW_HEIGHT);        
+        return addAlbum;
     }
     
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, VERTICAL_TABLEVIEW_WIDTH/1.5, HORIZONTAL_TABLEVIEW_HEIGHT)];
     backgroundView.backgroundColor = UIColorFromRGBWithAlpha(0x242424,0.9);
-    backgroundView.tag = section;
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sectionDidTap:)];
-    [backgroundView addGestureRecognizer:tapGesture];
     
     UIImageView *rightArrowImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"imageView_rightArrow"]];
     rightArrowImageView.frame = CGRectMake(0, 0, VERTICAL_TABLEVIEW_WIDTH/4, VERTICAL_TABLEVIEW_WIDTH/4);
     rightArrowImageView.center = CGPointMake(CGRectGetMidX(backgroundView.frame), rightArrowImageView.center.y);
     [backgroundView addSubview:rightArrowImageView];
+    
+    UIButton *previewImageView = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [previewImageView setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+    [previewImageView setBackgroundColor:[UIColor redColor]];
+    [previewImageView addTarget:self action:@selector(albumSectionDidTap:) forControlEvents:UIControlEventTouchUpInside];
+    previewImageView.tag = section;
+    previewImageView.frame = CGRectMake(3, VERTICAL_TABLEVIEW_WIDTH/4+3, VERTICAL_TABLEVIEW_WIDTH/1.5 - 6, HORIZONTAL_TABLEVIEW_HEIGHT - VERTICAL_TABLEVIEW_WIDTH/4 - 6);
+    [backgroundView addSubview:previewImageView];
     
     return backgroundView;
 }
@@ -330,6 +357,14 @@
         imagePickerController.delegate = self;        
     }
     return imagePickerController;
+}
+
+- (MFAlbumCoverEditView *)albumCoverEditView
+{
+    if (!_albumCoverEditView) {
+        _albumCoverEditView = [[MFAlbumCoverEditView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    }
+    return _albumCoverEditView;
 }
 
 @end
