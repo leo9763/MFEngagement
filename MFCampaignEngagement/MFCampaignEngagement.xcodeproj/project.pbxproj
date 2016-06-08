@@ -77,6 +77,13 @@
 		CE2D4DD31C44958100DBBF79 /* RomanticMusicHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2D4DD21C44958100DBBF79 /* RomanticMusicHelper.m */; };
 		CE2D4DD61C44A33100DBBF79 /* DirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2D4DD51C44A33100DBBF79 /* DirectoryWatcher.m */; };
 		CE2D4DD81C44E5AA00DBBF79 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2D4DD71C44E5AA00DBBF79 /* AVFoundation.framework */; };
+		CE387B481D0558CB006FA1A7 /* button_addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = CE387B471D0558CB006FA1A7 /* button_addImage.png */; };
+		CE387B4D1D057514006FA1A7 /* button_greenOK.png in Resources */ = {isa = PBXBuildFile; fileRef = CE387B491D057514006FA1A7 /* button_greenOK.png */; };
+		CE387B4E1D057514006FA1A7 /* button_musicRecord.png in Resources */ = {isa = PBXBuildFile; fileRef = CE387B4A1D057514006FA1A7 /* button_musicRecord.png */; };
+		CE387B4F1D057514006FA1A7 /* button_propPlane.png in Resources */ = {isa = PBXBuildFile; fileRef = CE387B4B1D057514006FA1A7 /* button_propPlane.png */; };
+		CE387B501D057514006FA1A7 /* button_redCancel.png in Resources */ = {isa = PBXBuildFile; fileRef = CE387B4C1D057514006FA1A7 /* button_redCancel.png */; };
+		CE6523341D06B1C70060C9D8 /* MFImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6523331D06B1C70060C9D8 /* MFImageHelper.m */; };
+		CE6523361D07B9920060C9D8 /* imageView_createAlbum.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6523351D07B9920060C9D8 /* imageView_createAlbum.png */; };
 		CE8140361C4C900500729368 /* Geu Dae Wa Na.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE8140321C4C900500729368 /* Geu Dae Wa Na.mp3 */; };
 		CE8140371C4C900500729368 /* Moonlight Shadow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE8140331C4C900500729368 /* Moonlight Shadow.mp3 */; };
 		CE8140381C4C900500729368 /* Na Ppeun Yeo Ja Ya .mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE8140341C4C900500729368 /* Na Ppeun Yeo Ja Ya .mp3 */; };
@@ -196,6 +203,14 @@
 		CE2D4DD41C44A33100DBBF79 /* DirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryWatcher.h; sourceTree = "<group>"; };
 		CE2D4DD51C44A33100DBBF79 /* DirectoryWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryWatcher.m; sourceTree = "<group>"; };
 		CE2D4DD71C44E5AA00DBBF79 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CE387B471D0558CB006FA1A7 /* button_addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_addImage.png; sourceTree = "<group>"; };
+		CE387B491D057514006FA1A7 /* button_greenOK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_greenOK.png; sourceTree = "<group>"; };
+		CE387B4A1D057514006FA1A7 /* button_musicRecord.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_musicRecord.png; sourceTree = "<group>"; };
+		CE387B4B1D057514006FA1A7 /* button_propPlane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_propPlane.png; sourceTree = "<group>"; };
+		CE387B4C1D057514006FA1A7 /* button_redCancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_redCancel.png; sourceTree = "<group>"; };
+		CE6523321D06B1C70060C9D8 /* MFImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFImageHelper.h; sourceTree = "<group>"; };
+		CE6523331D06B1C70060C9D8 /* MFImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFImageHelper.m; sourceTree = "<group>"; };
+		CE6523351D07B9920060C9D8 /* imageView_createAlbum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageView_createAlbum.png; sourceTree = "<group>"; };
 		CE8140321C4C900500729368 /* Geu Dae Wa Na.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Geu Dae Wa Na.mp3"; sourceTree = "<group>"; };
 		CE8140331C4C900500729368 /* Moonlight Shadow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Moonlight Shadow.mp3"; sourceTree = "<group>"; };
 		CE8140341C4C900500729368 /* Na Ppeun Yeo Ja Ya .mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Na Ppeun Yeo Ja Ya .mp3"; sourceTree = "<group>"; };
@@ -289,6 +304,8 @@
 				CEE52BE51CFD2E0A00D1E1EB /* EasyTableView.m */,
 				8C9BC1D71C2FA9580034849F /* MFAlertWindow.h */,
 				8C9BC1D81C2FA9580034849F /* MFAlertWindow.m */,
+				CE6523321D06B1C70060C9D8 /* MFImageHelper.h */,
+				CE6523331D06B1C70060C9D8 /* MFImageHelper.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -296,6 +313,12 @@
 		CE2D4D4F1C3F482100DBBF79 /* little_icon2 */ = {
 			isa = PBXGroup;
 			children = (
+				CE6523351D07B9920060C9D8 /* imageView_createAlbum.png */,
+				CE387B491D057514006FA1A7 /* button_greenOK.png */,
+				CE387B4A1D057514006FA1A7 /* button_musicRecord.png */,
+				CE387B4B1D057514006FA1A7 /* button_propPlane.png */,
+				CE387B4C1D057514006FA1A7 /* button_redCancel.png */,
+				CE387B471D0558CB006FA1A7 /* button_addImage.png */,
 				CEE52E681D02C5F400D1E1EB /* imageView_rightArrow.png */,
 				CE2D4D501C3F482100DBBF79 /* images */,
 			);
@@ -600,6 +623,8 @@
 				CE2D4DAE1C3F482100DBBF79 /* little_icon_vedio.png in Resources */,
 				CE2D4DA91C3F482100DBBF79 /* little_icon_ringBox.png in Resources */,
 				CE8140381C4C900500729368 /* Na Ppeun Yeo Ja Ya .mp3 in Resources */,
+				CE387B481D0558CB006FA1A7 /* button_addImage.png in Resources */,
+				CE387B4F1D057514006FA1A7 /* button_propPlane.png in Resources */,
 				CEE3CA891CE6D7F800F15964 /* fire1@3X.png in Resources */,
 				CE2D4DB31C3F482100DBBF79 /* little_icon_weddingOutfit.png in Resources */,
 				CE2D4DAA1C3F482100DBBF79 /* little_icon_rose.png in Resources */,
@@ -624,6 +649,7 @@
 				CE2D4DAB1C3F482100DBBF79 /* little_icon_sex.png in Resources */,
 				CE2D4DB21C3F482100DBBF79 /* little_icon_weddingGate.png in Resources */,
 				CEFE682F1C0300B6003103B2 /* Assets.xcassets in Resources */,
+				CE387B501D057514006FA1A7 /* button_redCancel.png in Resources */,
 				CEE3CA8B1CE6D7F800F15964 /* fire2@3X.png in Resources */,
 				CE2D4D841C3F482100DBBF79 /* little_icon_bear.png in Resources */,
 				CEE3CA701CE2E96100F15964 /* littleboy.png in Resources */,
@@ -639,7 +665,9 @@
 				8CD9A1111CE221BF00139BA2 /* palace.png in Resources */,
 				CE2D4DA51C3F482100DBBF79 /* little_icon_musicalNote.png in Resources */,
 				CE2D4DA21C3F482100DBBF79 /* little_icon_location.png in Resources */,
+				CE6523361D07B9920060C9D8 /* imageView_createAlbum.png in Resources */,
 				CE2D4D9A1C3F482100DBBF79 /* little_icon_flower.png in Resources */,
+				CE387B4E1D057514006FA1A7 /* button_musicRecord.png in Resources */,
 				CE2D4D831C3F482100DBBF79 /* little_icon_ballon.png in Resources */,
 				CE2D4D991C3F482100DBBF79 /* little_icon_doubleRings.png in Resources */,
 				CE2D4D9F1C3F482100DBBF79 /* little_icon_leatherShoe.png in Resources */,
@@ -674,6 +702,7 @@
 				CE2D4D861C3F482100DBBF79 /* little_icon_bell.png in Resources */,
 				CE2D4D981C3F482100DBBF79 /* little_icon_doubleHeart.png in Resources */,
 				CE2D4D8B1C3F482100DBBF79 /* little_icon_bridegroom.png in Resources */,
+				CE387B4D1D057514006FA1A7 /* button_greenOK.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +761,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6523341D06B1C70060C9D8 /* MFImageHelper.m in Sources */,
 				CEE3CA7C1CE6D75D00F15964 /* DGAaimaView.m in Sources */,
 				CEE52BE61CFD2E0A00D1E1EB /* EasyTableView.m in Sources */,
 				CE2D4DC71C43B07900DBBF79 /* MainScreenScrollView.m in Sources */,
@@ -879,7 +909,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MF.MFCampaignEngagement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e77490a1-1d33-45ca-8361-246a09a4c097";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/** \"$(SRCROOT)/MFCampaignEngagement/MFMacro.h\"";
 			};
 			name = Debug;
@@ -906,7 +936,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MF.MFCampaignEngagement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e77490a1-1d33-45ca-8361-246a09a4c097";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/** \"$(SRCROOT)/MFCampaignEngagement/MFMacro.h\"";
 			};
 			name = Release;

@@ -19,6 +19,7 @@
 //函数
 #pragma mark Functions
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+#define GET_LIBARY_PATH(fileName) [[NSHomeDirectory() stringByAppendingPathComponent:@"Library"] stringByAppendingFormat:@"/Caches/%@.png",fileName]
 
 //RGB color macro with alpha
 #define UIColorFromRGBWithAlpha(rgbValue,a) [UIColor \

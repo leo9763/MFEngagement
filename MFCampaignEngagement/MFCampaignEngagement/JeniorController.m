@@ -25,12 +25,11 @@
 //http://www.cnblogs.com/YouXianMing/p/5010104.html 收纳table动画效果
 
 
-@interface JeniorController ()  <UINavigationControllerDelegate,UIImagePickerControllerDelegate,DGEarthViewDidTapDelegate,EasyTableViewDelegate>
+@interface JeniorController ()  <DGEarthViewDidTapDelegate,EasyTableViewDelegate,MFAlbumCoverEditedProtocal>
 {
     NSIndexPath *_selectedHorizontalIndexPath;
 }
 @property (nonatomic, strong) UIButton *backButton;
-@property (nonatomic, strong) UIImagePickerController *imagePickerController;
 @property (nonatomic, strong) EasyTableView *tableView;
 @property (nonatomic, strong) NSMutableArray *myAlbums;
 @property (nonatomic, assign) BOOL isShow;
@@ -38,7 +37,7 @@
 @end
 
 @implementation JeniorController
-@synthesize backButton,imagePickerController;
+@synthesize backButton;
 
 - (void)setupView
 {
@@ -60,6 +59,9 @@
     [[[self.navigationController.navigationBar subviews] objectAtIndex:0] setAlpha:0];
     
     self.extendedLayoutIncludesOpaqueBars = YES;
+    
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.backButton];
     
     DGAaimaView *animaView = [[DGAaimaView alloc] initWithFrame:self.view.bounds delegate:self];
     [self.view addSubview:animaView];
@@ -83,17 +85,6 @@
     //初始化core data 数据库
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"Model.sqlite"];
     
-    //创建
-//    self.myAlbums = [NSMutableArray array];
-//    NSArray *areas = @[@"Russia",@"Thailand",@"Korea"];
-//    for (NSString *area in areas) {
-//        JeniorAlbum *album = [JeniorAlbum MR_createEntity];
-//        album.area = area;
-//        album.photos = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8"];
-//        album.date = [NSDate date];
-//        [_myAlbums addObject:album];
-//    }
-    
     //查询
     self.myAlbums = [NSMutableArray arrayWithArray:[JeniorAlbum MR_findAll]];
     
@@ -101,9 +92,8 @@
 //    for (JeniorAlbum *album in self.myAlbums) {
 //        [album MR_deleteEntity];
 //    }
-    
-    //保存
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+//
+//    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
 #pragma mark - Life
@@ -118,21 +108,14 @@
 - (void)buttonPressed:(UIButton *)button
 {
     if (button == backButton) {
-        
-        [self dismissViewControllerAnimated:YES completion:^{
-            
-        }];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
 - (void)itemPressed:(UIBarButtonItem *)buttonItem
 {
-    if (buttonItem == self.navigationItem.leftBarButtonItem) {
-        DLog(@"返回按钮被按");
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } else if (buttonItem  == self.navigationItem.rightBarButtonItem) {
+    if (buttonItem  == self.navigationItem.rightBarButtonItem) {
         DLog(@"添加图片按钮被按");
-        
     }
 }
 
@@ -170,19 +153,7 @@
 
 - (void)addAlbumSectionDidTap:(id)sender
 {
-//    [self presentViewController:self.imagePickerController animated:YES completion:^{}];
-    [self.view addSubview:self.albumCoverEditView];
-}
-
-#pragma mark - Delegate Methods
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
-{
-    if (picker == self.imagePickerController) {
-        UIImage *originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-//        UIImageWriteToSavedPhotosAlbum(originalImage, self, @selector(imagePickerController:didFinishPickingMediaWithInfo:), nil);
-    }
-//    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
-    [self.imagePickerController dismissViewControllerAnimated:YES completion:^{}];
+    self.albumCoverEditView.hidden = !self.albumCoverEditView.hidden;
 }
 
 - (void)didTapInEarthView:(id)sender
@@ -299,12 +270,31 @@
 - (UIView *)easyTableView:(EasyTableView*)easyTableView viewForHeaderInSection:(NSInteger)section {
     
     if (section == _myAlbums.count) {
-        UIButton *addAlbum = [UIButton buttonWithType:UIButtonTypeCustom];
-        [addAlbum setBackgroundColor:[UIColor greenColor]];
-        [addAlbum addTarget:self action:@selector(addAlbumSectionDidTap:) forControlEvents:UIControlEventTouchUpInside];
-        addAlbum.frame = CGRectMake(0, 0, VERTICAL_TABLEVIEW_WIDTH/1.5, HORIZONTAL_TABLEVIEW_HEIGHT);        
-        return addAlbum;
+        
+        //增加相册
+        UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, VERTICAL_TABLEVIEW_WIDTH/1.5, HORIZONTAL_TABLEVIEW_HEIGHT)];
+        backgroundView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+        backgroundView.layer.cornerRadius = 5;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addAlbumSectionDidTap:)];
+        [backgroundView addGestureRecognizer:tap];
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"imageView_createAlbum"]];
+        imageView.frame = CGRectMake(0, 0, backgroundView.frame.size.width/2, backgroundView.frame.size.width/2);
+        imageView.center = CGPointMake(backgroundView.frame.size.width/2, backgroundView.frame.size.height/2);
+        [backgroundView addSubview:imageView];
+        
+        UILabel *tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(imageView.frame), CGRectGetWidth(backgroundView.frame), CGRectGetHeight(imageView.frame)/2)];
+        tipLabel.text = @"创建新旅程回忆";
+        tipLabel.adjustsFontSizeToFitWidth = YES;
+        tipLabel.backgroundColor = [UIColor clearColor];
+        tipLabel.textColor = [UIColor whiteColor];
+        [backgroundView addSubview:tipLabel];
+
+        return backgroundView;
     }
+    
+    JeniorAlbum *album = [_myAlbums objectAtIndex:section];
+    UIImage *image = [UIImage imageWithContentsOfFile:GET_LIBARY_PATH(album.coverImage)];
     
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, VERTICAL_TABLEVIEW_WIDTH/1.5, HORIZONTAL_TABLEVIEW_HEIGHT)];
     backgroundView.backgroundColor = UIColorFromRGBWithAlpha(0x242424,0.9);
@@ -315,8 +305,7 @@
     [backgroundView addSubview:rightArrowImageView];
     
     UIButton *previewImageView = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [previewImageView setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
-    [previewImageView setBackgroundColor:[UIColor redColor]];
+    [previewImageView setImage:image forState:UIControlStateNormal];
     [previewImageView addTarget:self action:@selector(albumSectionDidTap:) forControlEvents:UIControlEventTouchUpInside];
     previewImageView.tag = section;
     previewImageView.frame = CGRectMake(3, VERTICAL_TABLEVIEW_WIDTH/4+3, VERTICAL_TABLEVIEW_WIDTH/1.5 - 6, HORIZONTAL_TABLEVIEW_HEIGHT - VERTICAL_TABLEVIEW_WIDTH/4 - 6);
@@ -331,6 +320,14 @@
     borderView.image			= [UIImage imageNamed:borderImageName];
 }
 
+#pragma mark - Other Delegate
+- (void)shouldReloadData
+{
+    self.myAlbums = [NSMutableArray arrayWithArray:[JeniorAlbum MR_findAll]];
+    
+    [self.tableView reload];
+}
+
 #pragma mark - Getters & Setters
 - (void)setBackButton:(UIButton *)aBackButton
 {
@@ -343,26 +340,20 @@
 {
     if (!backButton) {
         backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        backButton.frame = CGRectMake(0, 0, 48, 48);
+        [backButton setImage:[UIImage imageNamed:@"button_propPlane"] forState:UIControlStateNormal];
         [backButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
     }
     return backButton;
 }
 
-- (UIImagePickerController *)imagePickerController
-{
-    if (!imagePickerController) {
-        imagePickerController = [[UIImagePickerController alloc] init];
-        imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        imagePickerController.allowsEditing = YES;
-        imagePickerController.delegate = self;        
-    }
-    return imagePickerController;
-}
-
 - (MFAlbumCoverEditView *)albumCoverEditView
 {
     if (!_albumCoverEditView) {
-        _albumCoverEditView = [[MFAlbumCoverEditView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        _albumCoverEditView = [[MFAlbumCoverEditView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.tableView.frame)) currentViewController:self];
+        [self.view addSubview:_albumCoverEditView];
+        _albumCoverEditView.delegate = self;
+        _albumCoverEditView.hidden = YES;
     }
     return _albumCoverEditView;
 }

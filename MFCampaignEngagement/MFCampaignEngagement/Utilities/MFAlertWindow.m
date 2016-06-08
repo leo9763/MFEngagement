@@ -59,4 +59,26 @@ static uint windowLevel = 0;
     [self makeKeyAndVisible];
 }
 
++ (void)showAlertWithTitle:(NSString *)title message:(NSString *)message controller:(UIViewController *)controller compeletedHandler:(void(^)(NSUInteger clickedIndex))handler buttonTitles:(NSString *)buttonTitles,...
+{
+    va_list args;
+    va_start(args, buttonTitles);
+    
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title
+                                                                     message:message
+                                                              preferredStyle:UIAlertControllerStyleAlert];
+    int i= 0;
+    for (NSString *str = buttonTitles; str != nil; str = va_arg(args, NSString *)) {
+        UIAlertAction *oneAction = [UIAlertAction actionWithTitle:str
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * _Nonnull action) {
+                                                              !handler?:handler(i);
+                                                          }];
+        [alertVC addAction:oneAction];
+        i++;
+    }
+    [controller presentViewController:alertVC animated:YES completion:^{}];
+    va_end(args);
+}
+
 @end

@@ -22,6 +22,6 @@
 
 + (MFAlertWindow *)alertWindow;
 
-- (void)showWithTitle:(NSString *)title message:(NSString *)message buttons:(NSString *)buttons,...;
++ (void)showAlertWithTitle:(NSString *)title message:(NSString *)message controller:(UIViewController *)controller compeletedHandler:(void(^)(NSUInteger clickedIndex))handler buttonTitles:(NSString *)buttonTitles,...;
 
 @end
