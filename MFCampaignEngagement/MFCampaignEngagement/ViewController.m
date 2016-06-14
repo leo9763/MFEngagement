@@ -37,7 +37,9 @@
 //    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     //设置navigationBar为半透明(模糊)效果
-//    [self.navigationController.navigationBar setTranslucent:YES];
+    [self.navigationController.navigationBar setTranslucent:YES];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     self.extendedLayoutIncludesOpaqueBars = YES;
     //不给scrollView在bar中的部分上下可滑
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -77,10 +79,21 @@
     [self.mainStoryScrollView makeConstraints];
 }
 
--(void)viewWillDisappear:(BOOL)animated{
+-(void)viewWillDisappear:(BOOL)animated
+{
     [super viewWillDisappear:animated];
     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    CABasicAnimation *anima = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];//绕着z轴为矢量，进行旋转(@"transform.rotation.z"==@@"transform.rotation")
+    anima.toValue = [NSNumber numberWithFloat:M_PI];
+    anima.duration = 3.0;
+    anima.repeatDuration = HUGE_VALF;
+    [self.musicButton.layer addAnimation:anima forKey:@"rotateAnimation"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -138,7 +151,38 @@
         }
         
         _isPlaying = !_isPlaying;
+        
+        [self shouldRotateMusicPlayerIcon:_isPlaying];
     }
+}
+
+#pragma mark - Private
+- (void)shouldRotateMusicPlayerIcon:(BOOL)shouldRotate
+{
+    if (shouldRotate) {
+        [self resumeLayer:self.musicButton.layer];
+    } else {
+        [self pauseLayer:self.musicButton.layer];
+    }
+}
+
+//暂停layer上面的动画
+- (void)pauseLayer:(CALayer*)layer
+{
+    CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
+    layer.speed = 0.0;
+    layer.timeOffset = pausedTime;
+}
+
+//继续layer上面的动画
+- (void)resumeLayer:(CALayer*)layer
+{
+    CFTimeInterval pausedTime = [layer timeOffset];
+    layer.speed = 1.0;
+    layer.timeOffset = 0.0;
+    layer.beginTime = 0.0;
+    CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+    layer.beginTime = timeSincePause;
 }
 
 #pragma mark - Getter & Setter
@@ -198,7 +242,7 @@
 {
     if (!musicButton) {
         musicButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [musicButton setImage:[UIImage imageNamed:@"little_icon_musicalNote"] forState:UIControlStateNormal];
+        [musicButton setImage:[UIImage imageNamed:@"button_musicRecord"] forState:UIControlStateNormal];
         [musicButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
     }
     return musicButton;
